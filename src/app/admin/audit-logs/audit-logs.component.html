@@ -1,4 +1,4 @@
-﻿<div [@routerTransition]>
+<div [@routerTransition]>
     <div class="content d-flex flex-column flex-column-fluid">
         <sub-header [title]="'AuditLogs' | localize"></sub-header>
         <div [class]="containerClass">
@@ -288,7 +288,7 @@
                                                 primengTableHelperAuditLogs.predefinedRecordsCountPerPage
                                             "
                                             [showCurrentPageReport]="true"
-                                            [currentPageReportErp]="
+                                            [currentPageReportTemplate]="
                                                 'TotalRecordsCount' | localize: primengTableHelperAuditLogs.totalRecordsCount
                                             "
                                         ></p-paginator>
@@ -460,7 +460,7 @@
                                                 primengTableHelperEntityChanges.predefinedRecordsCountPerPage
                                             "
                                             [showCurrentPageReport]="true"
-                                            [currentPageReportErp]="
+                                            [currentPageReportTemplate]="
                                                 'TotalRecordsCount' | localize: primengTableHelperEntityChanges.totalRecordsCount
                                             "
                                         ></p-paginator>

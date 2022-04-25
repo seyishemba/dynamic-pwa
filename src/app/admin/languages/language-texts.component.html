@@ -1,4 +1,4 @@
-﻿<div [@routerTransition]>
+<div [@routerTransition]>
     <div class="content d-flex flex-column flex-column-fluid">
         <sub-header
             [title]="'LanguageTexts' | localize"
@@ -185,7 +185,7 @@
                                     [totalRecords]="primengTableHelper.totalRecordsCount"
                                     [rowsPerPageOptions]="primengTableHelper.predefinedRecordsCountPerPage"
                                     [showCurrentPageReport]="true"
-                                    [currentPageReportErp]="
+                                    [currentPageReportTemplate]="
                                         'TotalRecordsCount' | localize: primengTableHelper.totalRecordsCount
                                     "
                                 ></p-paginator>
