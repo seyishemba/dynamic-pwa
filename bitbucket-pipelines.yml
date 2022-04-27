@@ -8,9 +8,9 @@ pipelines:
         script:
           - npm install --legacy-peer-deps
           - npm run publish
-          - docker login http://project.pilgrimconsulting.group --username admin --password admin123
-          - docker build -t admin/sentinel-fronend:latest .
-          - docker push admin/sentinel-fronend:latest
+          - docker login -u osmandiyaka -p nlabongbaba2015
+          - docker build -t osmandiyaka/sentinel-fronend:latest .
+          - docker push osmandiyaka/sentinel-fronend:latest
         artifacts:
             - node_modules/**
         services:
