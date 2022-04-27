@@ -6,7 +6,7 @@ pipelines:
         caches:
           - node
         script:
-          - npm install
+          - npm install --legacy-peer-deps
           - npm run publish
           - docker login http://project.pilgrimconsulting.group:8081 --username admin --password admin123
           - docker build -t serviceAccount:sentinel-fronend:latest .
