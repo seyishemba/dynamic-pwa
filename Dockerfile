@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package.json  /app
 RUN npm install
 COPY . /app
-RUN node_modules/.bin/ng build --prod
+RUN node_modules/.bin/ng build --configuration production
 # RUN ng build --prod
 
 FROM nginx:1.17-alpine
