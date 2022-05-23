@@ -39,13 +39,15 @@ export class AppRouteGuard implements CanActivate, CanActivateChild, CanLoad {
                     } else {
                         sessionObservable.next(false);
                         sessionObservable.complete();
-                        this._router.navigate(['/account/login']);
+                        // this._router.navigate(['/account/login']);
+                        this._router.navigate(['/forms']); // for test purposes
                     }
                 },
                 (error) => {
                     sessionObservable.next(false);
                     sessionObservable.complete();
-                    this._router.navigate(['/account/login']);
+                    // this._router.navigate(['/account/login']);
+                    this._router.navigate(['/forms']); // for test purposes
                 }
             );
             return sessionObservable;
