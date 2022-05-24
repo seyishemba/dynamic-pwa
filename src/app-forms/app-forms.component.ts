@@ -8,48 +8,42 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppFormsComponent implements OnInit {
 
-    fields: FormConfig[] = [
-        {
-          key: 'branch',
-          type: 'select',
-          value: 2,
-          required: true,
-          label: 'Branch',
-          placeholder: 'Select branch',
-          selectOptions: [
-              {
-                  label: 'Branch A',
-                  value: 1
-              },
-              {
-                label: 'Branch B',
-                value: 2
+    fields: FormConfig = {
+        id: '1',
+        title: 'Sample form',
+        definitions: [
+            {
+              value: 2,
+              required: true,
+              label: 'Branch',
+              type: 'enum',
+              placeholder: 'Select branch',
+              enumValues: [
+                  'Branch A',
+                  'Branch B'
+              ]
+            },
+            {
+                type: 'bool',
+                value: false,
+                required: false,
+                label: `Are you not a robot?`
+            },
+            {
+                type: 'string',
+                value: 'mac@dmg.com',
+                required: true,
+                label: 'Email',
+                placeholder: 'Enter email',
+            },
+            {
+                type: 'int',
+                required: true,
+                label: 'Age',
+                placeholder: 'Enter Age',
             }
           ]
-        },
-        {
-            key: 'valid',
-            type: 'checkbox',
-            value: false,
-            required: false,
-            label: `Are you not a robot?`
-        },
-        {
-            key: 'email',
-            type: 'input',
-            value: 'mac@dmg.com',
-            required: true,
-            label: 'Email',
-            placeholder: 'Enter email',
-        },
-        {
-            key: 'address',
-            type: 'textarea',
-            required: true,
-            label: 'Address',
-            placeholder: 'Enter Address',
-        }
-      ];
+    };
   constructor() { }
 
   ngOnInit(): void {

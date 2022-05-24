@@ -1,10 +1,7 @@
-import { SelectOptions } from './select-options';
+import { FormDefinitions } from './form-definitions';
+
 export interface FormConfig {
-    key: string;
-    type: string;
-    value?: any;
-    required: boolean;
-    label: string;
-    placeholder?: string;
-    selectOptions?: SelectOptions[];
+    id: string;
+    title: string;
+    definitions: FormDefinitions[];
 }

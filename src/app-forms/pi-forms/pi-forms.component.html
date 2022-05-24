@@ -1,4 +1,6 @@
 <form [formGroup]="form" (ngSubmit)="submitForm()">
     <formly-form [form]="form" [fields]="formlyFields" [model]="model"></formly-form>
-    <button type="submit" class="btn btn-primary d-block" [disabled]="form.invalid">Submit</button>
+    <ng-container *ngIf="fields.definitions.length > 0" >
+        <button type="submit" class="btn btn-primary d-block m-4" [disabled]="form.invalid">Submit</button>
+    </ng-container>
 </form>

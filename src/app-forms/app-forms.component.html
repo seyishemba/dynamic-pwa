@@ -8,7 +8,8 @@
         <div class="d-flex flex-center flex-column flex-column-fluid p-10">
             <div class="login-form">
                 <!--begin::Form-->
-                <app-pi-forms [fields]="fields" (formChange)="getFormData($event)"></app-pi-forms>
+                <!-- <app-pi-forms [getFormObjectUrl]="'https://localhost:6000/form'" [inspectionId]="1234" (formChange)="getFormData($event)"></app-pi-forms> -->
+                <app-pi-forms [useUrl]="false" [fields]="fields" (formChanges)="getFormData($event)"></app-pi-forms>
                 <!--end::Form-->
 
             </div>
