@@ -66,6 +66,13 @@ export class LoginComponent extends AppComponentBase implements OnInit {
         }
 
         this.handleExternalLoginCallbacks();
+
+        this.componentLoginPage();
+    }
+
+    componentLoginPage(){
+        //COMPONENT LOGIN OVERRIDE
+        this._router.navigate(['login']);
     }
 
     handleExternalLoginCallbacks(): void {

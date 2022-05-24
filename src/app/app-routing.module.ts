@@ -5,6 +5,8 @@ import { AppRouteGuard } from './shared/common/auth/auth-route-guard';
 import { NotificationsComponent } from './shared/layout/notifications/notifications.component';
 import { NgxSpinnerService } from 'ngx-spinner';
 
+import { LoginComponent } from './components/login/login.component'
+
 @NgModule({
     imports: [
         RouterModule.forChild([
@@ -38,6 +40,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
                     },
                 ],
             },
+            { path: 'login', component: LoginComponent },
+
         ]),
     ],
     exports: [RouterModule],

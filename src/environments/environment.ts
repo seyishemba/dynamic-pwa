@@ -6,5 +6,10 @@
 export const environment = {
     production: false,
     hmr: false,
+    name: 'Sentinel',
+    assets: '/assets/components',
     appConfig: 'appconfig.json',
+    styles: {
+        primary: '#4795C1'
+    }
 };

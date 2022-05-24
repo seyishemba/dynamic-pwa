@@ -94,7 +94,10 @@ import { MenuSearchBarComponent } from './shared/layout/nav/menu-search-bar/menu
 import { NgxSpinnerModule, NgxSpinnerComponent } from 'ngx-spinner';
 import { ScrollTopComponent } from './shared/layout/scroll-top.component';
 import { AppBsModalModule } from '@shared/common/appBsModal/app-bs-modal.module';
-import { SubheaderModule } from './shared/common/sub-header/subheader.module';
+import { SubheaderModule } from './shared/common/sub-header/subheader.module';;
+import { LoginComponent } from './components/login/login.component'
+;
+import { HeaderComponent } from './components/common/header/header.component'
 
 @NgModule({
     declarations: [
@@ -153,8 +156,9 @@ import { SubheaderModule } from './shared/common/sub-header/subheader.module';
         SessionTimeoutComponent,
         MenuSearchBarComponent,
         ActiveDelegatedUsersComboComponent,
-        DefaultLogoComponent
-    ],
+        DefaultLogoComponent,
+        LoginComponent ,
+        HeaderComponent   ],
     imports: [
         CommonModule,
         FormsModule,
