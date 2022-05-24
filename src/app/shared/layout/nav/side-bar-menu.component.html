@@ -28,8 +28,8 @@
     <ng-container *ngFor="let child of menu.items">
         <ng-container
             *ngIf="showMenuItem(child)"
-            [ngErpOutlet]="mMenuItem"
-            [ngErpOutletContext]="{ item: child, parentItem: null }"
+            [ngTemplateOutlet]="mMenuItem"
+            [ngTemplateOutletContext]="{ item: child, parentItem: null }"
         ></ng-container>
     </ng-container>
 </ng-template>
@@ -51,8 +51,8 @@
             [tooltip]="iconMenu && parentItem == null ? l(item.name): ''"
         >
             <ng-container
-                [ngErpOutlet]="mMenuItemText"
-                [ngErpOutletContext]="{ item: item, parentItem: parentItem }"
+                [ngTemplateOutlet]="mMenuItemText"
+                [ngTemplateOutletContext]="{ item: item, parentItem: parentItem }"
             ></ng-container>
         </a>
         <a
@@ -62,16 +62,16 @@
             class="menu-link"
         >
             <ng-container
-                [ngErpOutlet]="mMenuItemText"
-                [ngErpOutletContext]="{ item: item, parentItem: parentItem }"
+                [ngTemplateOutlet]="mMenuItemText"
+                [ngTemplateOutletContext]="{ item: item, parentItem: parentItem }"
             ></ng-container>
         </a>
 
         <!-- if menu item has submenu child  -->
         <a href="javascript:;" *ngIf="item.items.length" class="menu-link menu-toggle" [class]="{'active' : isMenuItemIsActive(item) }" [tooltip]="iconMenu && parentItem == null ? l(item.name): ''">
             <ng-container
-                [ngErpOutlet]="mMenuItemText"
-                [ngErpOutletContext]="{ item: item, parentItem: parentItem }"
+                [ngTemplateOutlet]="mMenuItemText"
+                [ngTemplateOutletContext]="{ item: item, parentItem: parentItem }"
             ></ng-container>
         </a>
 
@@ -80,8 +80,8 @@
             <div class="menu-subnav">
                 <ng-container *ngFor="let child of item.items">
                     <ng-container
-                        [ngErpOutlet]="mMenuItem"
-                        [ngErpOutletContext]="{ item: child, parentItem: item }"
+                        [ngTemplateOutlet]="mMenuItem"
+                        [ngTemplateOutletContext]="{ item: child, parentItem: item }"
                     ></ng-container>
                 </ng-container>
             </div>

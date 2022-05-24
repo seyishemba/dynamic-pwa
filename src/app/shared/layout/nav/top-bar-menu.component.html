@@ -23,8 +23,8 @@
     <ng-container *ngFor="let item of menu.items">
         <ng-container
             *ngIf="item.name"
-            [ngErpOutlet]="kt_menu"
-            [ngErpOutletContext]="{ item: item, depth: 0 }"
+            [ngTemplateOutlet]="kt_menu"
+            [ngTemplateOutletContext]="{ item: item, depth: 0 }"
         ></ng-container>
     </ng-container>
     <div class="menu-item here menu-lg-down-accordion me-lg-1" aria-haspopup="true" *ngIf="!isMobileDevice()">
@@ -46,8 +46,8 @@
         <ng-container *ngIf="item.items.length">
             <span class="{{ getAnchorItemCssClasses(item, parentItem) }}">
                 <ng-container
-                    [ngErpOutlet]="kt_menu_item_inner"
-                    [ngErpOutletContext]="{ item: item, parentItem: parentItem, depth: depth + 1 }"
+                    [ngTemplateOutlet]="kt_menu_item_inner"
+                    [ngTemplateOutletContext]="{ item: item, parentItem: parentItem, depth: depth + 1 }"
                 ></ng-container>
 
                 <i *ngIf="item.items.length && !parentItem" class="la la-angle-down ms-2"></i>
@@ -65,8 +65,8 @@
                 class="{{ getAnchorItemCssClasses(item, parentItem) }}"
             >
                 <ng-container
-                    [ngErpOutlet]="kt_menu_item_inner"
-                    [ngErpOutletContext]="{ item: item, parentItem: parentItem, depth: depth + 1 }"
+                    [ngTemplateOutlet]="kt_menu_item_inner"
+                    [ngTemplateOutletContext]="{ item: item, parentItem: parentItem, depth: depth + 1 }"
                 ></ng-container>
             </a>
             <a
@@ -76,8 +76,8 @@
                 class="{{ getAnchorItemCssClasses(item, parentItem) }}"
             >
                 <ng-container
-                    [ngErpOutlet]="kt_menu_item_inner"
-                    [ngErpOutletContext]="{ item: item, parentItem: parentItem, depth: depth + 1 }"
+                    [ngTemplateOutlet]="kt_menu_item_inner"
+                    [ngTemplateOutletContext]="{ item: item, parentItem: parentItem, depth: depth + 1 }"
                 ></ng-container>
             </a>
         </ng-container>
@@ -89,8 +89,8 @@
                 <div *ngIf="item.items.length" class="menu-subnav">
                     <ng-container *ngFor="let child of item.items">
                         <ng-container
-                            [ngErpOutlet]="kt_menu"
-                            [ngErpOutletContext]="{ item: child, parentItem: item, depth: depth + 1 }"
+                            [ngTemplateOutlet]="kt_menu"
+                            [ngTemplateOutletContext]="{ item: child, parentItem: item, depth: depth + 1 }"
                         ></ng-container>
                     </ng-container>
                 </div>
