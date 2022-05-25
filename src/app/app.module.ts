@@ -98,6 +98,10 @@ import { SubheaderModule } from './shared/common/sub-header/subheader.module';;
 import { LoginComponent } from './components/login/login.component'
 ;
 import { HeaderComponent } from './components/common/header/header.component'
+import { LightgalleryModule } from 'lightgallery/angular';;
+import { LightboxComponent } from './components/common/lightbox/lightbox.component'
+;
+import { DashboardComponent } from './components/dashboard/dashboard.component'
 
 @NgModule({
     declarations: [
@@ -158,7 +162,9 @@ import { HeaderComponent } from './components/common/header/header.component'
         ActiveDelegatedUsersComboComponent,
         DefaultLogoComponent,
         LoginComponent ,
-        HeaderComponent   ],
+        HeaderComponent ,
+        LightboxComponent ,
+        DashboardComponent ],
     imports: [
         CommonModule,
         FormsModule,
@@ -186,6 +192,7 @@ import { HeaderComponent } from './components/common/header/header.component'
         NgxSpinnerModule,
         AppBsModalModule,
         SubheaderModule,
+        LightgalleryModule,
     ],
     providers: [
         ImpersonationService,

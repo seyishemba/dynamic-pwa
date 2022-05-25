@@ -6,6 +6,7 @@ import { NotificationsComponent } from './shared/layout/notifications/notificati
 import { NgxSpinnerService } from 'ngx-spinner';
 
 import { LoginComponent } from './components/login/login.component'
+import { DashboardComponent } from './components/dashboard/dashboard.component'
 
 @NgModule({
     imports: [
@@ -41,6 +42,7 @@ import { LoginComponent } from './components/login/login.component'
                 ],
             },
             { path: 'login', component: LoginComponent },
+            { path: 'component-dashboard', component: DashboardComponent },
 
         ]),
     ],

@@ -163,3 +163,5 @@ bs-days-calendar-view {
     display: inline-block;
     border-radius: 4px 0 0 4px;
 }
+@import '~lightgallery/scss/lightgallery';
+
