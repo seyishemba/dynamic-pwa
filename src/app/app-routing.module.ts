@@ -7,6 +7,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 
 import { LoginComponent } from './components/login/login.component'
 import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { ViewJobComponent } from './components/view-job/view-job.component'
 
 @NgModule({
     imports: [
@@ -43,6 +44,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
             },
             { path: 'login', component: LoginComponent },
             { path: 'component-dashboard', component: DashboardComponent },
+            { path: 'component-dashboard/view-job', component: ViewJobComponent },
 
         ]),
     ],

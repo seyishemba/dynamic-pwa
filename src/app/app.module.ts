@@ -95,14 +95,17 @@ import { NgxSpinnerModule, NgxSpinnerComponent } from 'ngx-spinner';
 import { ScrollTopComponent } from './shared/layout/scroll-top.component';
 import { AppBsModalModule } from '@shared/common/appBsModal/app-bs-modal.module';
 import { SubheaderModule } from './shared/common/sub-header/subheader.module';;
-import { LoginComponent } from './components/login/login.component'
-;
+import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/common/header/header.component'
 import { LightgalleryModule } from 'lightgallery/angular';;
 import { LightboxComponent } from './components/common/lightbox/lightbox.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
-import { BrowserModule } from '@angular/platform-browser';
-
+import { BrowserModule } from '@angular/platform-browser';;
+import { ListJobsComponent } from './components/list-jobs/list-jobs.component';
+import { ViewJobComponent } from './components/view-job/view-job.component';
+import { InspectionComponent } from './components/tabs/inspection/inspection.component';
+import { NotesComponent } from './components/tabs/notes/notes.component';
+import { PhotosComponent } from './components/tabs/photos/photos.component';
 
 @NgModule({
     declarations: [
@@ -162,10 +165,16 @@ import { BrowserModule } from '@angular/platform-browser';
         MenuSearchBarComponent,
         ActiveDelegatedUsersComboComponent,
         DefaultLogoComponent,
-        LoginComponent ,
-        HeaderComponent ,
-        LightboxComponent ,
-        DashboardComponent ],
+        LoginComponent,
+        HeaderComponent,
+        LightboxComponent,
+        DashboardComponent,
+        ListJobsComponent,
+        ViewJobComponent,
+        InspectionComponent,
+        NotesComponent,
+        PhotosComponent
+        ],
     imports: [
         CommonModule,
         FormsModule,
