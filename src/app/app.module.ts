@@ -99,9 +99,10 @@ import { LoginComponent } from './components/login/login.component'
 ;
 import { HeaderComponent } from './components/common/header/header.component'
 import { LightgalleryModule } from 'lightgallery/angular';;
-import { LightboxComponent } from './components/common/lightbox/lightbox.component'
-;
+import { LightboxComponent } from './components/common/lightbox/lightbox.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
+import { BrowserModule } from '@angular/platform-browser';
+
 
 @NgModule({
     declarations: [
@@ -193,6 +194,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
         AppBsModalModule,
         SubheaderModule,
         LightgalleryModule,
+        BrowserModule,
+
+
     ],
     providers: [
         ImpersonationService,
@@ -203,6 +207,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component'
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
         },
+
     ]
 })
 export class AppModule {}
