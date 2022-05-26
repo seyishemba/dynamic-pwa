@@ -36,6 +36,11 @@ export class PiFormsComponent implements OnInit {
      */
     @Input() getFormObjectUrl: any;
     /**
+     * URL for submitting form data to server
+     * This is a POST method
+     */
+    @Input() submitFormObjectUrl: any;
+    /**
      * Previously form saved data
      * This object is used to populate the form values
      */
@@ -189,7 +194,15 @@ export class PiFormsComponent implements OnInit {
 
     submitForm() {
         if (this.form.valid) {
-            this.formChanges.emit(this.model);
+            if (this.submitFormObjectUrl) {
+                this.service.sendFormObject(this.submitFormObjectUrl, this.inspectionId, this.model)
+                .pipe(finalize(() => {}))
+                .subscribe((results: any) => {
+                    this.formChanges.emit(this.model);
+                });
+            } else {
+                this.formChanges.emit(this.model);
+            }
         }
     }
 
