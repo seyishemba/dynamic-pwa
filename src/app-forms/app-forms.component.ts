@@ -1,55 +1,77 @@
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { FormConfig } from './pi-forms/form-config';
 import { Component, OnInit } from '@angular/core';
+import { FormDefinitions } from './pi-forms/form-definitions';
 
 @Component({
-  selector: 'app-app-forms',
-  templateUrl: './app-forms.component.html',
-  styleUrls: ['./app-forms.component.less']
+    selector: 'app-app-forms',
+    templateUrl: './app-forms.component.html',
+    styleUrls: ['./app-forms.component.less']
 })
 export class AppFormsComponent implements OnInit {
-
-    fields: FormConfig = {
+    form: FormGroup = new FormGroup({});
+    public fields: FormConfig = {
         id: '1',
         title: 'Sample form',
         definitions: [
             {
-              value: 2,
-              required: true,
-              label: 'Branch',
-              type: 'enum',
-              placeholder: 'Select branch',
-              enumValues: [
-                  'Branch A',
-                  'Branch B'
-              ]
+                value: 'Branch A',
+                required: true,
+                label: 'Branch',
+                key: 1,
+                type: 'enum',
+                placeholder: 'Select branch',
+                enumValues: [
+                    'Branch A',
+                    'Branch B'
+                ]
             },
             {
-                type: 'bool',
+                key: 2,
                 value: false,
                 required: false,
-                label: `Are you not a robot?`
+                label: `Are you not a robot?`,
+                type: 'bool'
             },
             {
-                type: 'string',
+                key: 'email',
                 value: 'mac@dmg.com',
                 required: true,
                 label: 'Email',
                 placeholder: 'Enter email',
+                type: 'string'
             },
             {
-                type: 'int',
+                key: 4,
                 required: true,
                 label: 'Age',
                 placeholder: 'Enter Age',
+                type: 'int'
             }
-          ]
+        ]
     };
-  constructor() { }
 
-  ngOnInit(): void {
-  }
+    individual: FormDefinitions = {
+        key: 'email',
+        value: 'mac@dmg.com',
+        required: true,
+        label: 'Email',
+        placeholder: 'Enter email',
+        type: 'string'
+    };
+    constructor(private fb: FormBuilder) {
+    }
 
-  getFormData(data) {
-      alert(JSON.stringify(data));
-  }
+    ngOnInit(): void {
+    }
+
+    getFormData(data) {
+        console.log(data);
+        alert(JSON.stringify(data));
+    }
+
+    addToFormObject(key, control) {
+        this.form.addControl(key, control);
+        console.log(this.form.value);
+    }
 }

@@ -1,6 +1,26 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()">
+<!-- <form [formGroup]="form" (ngSubmit)="submitForm()">
     <formly-form [form]="form" [fields]="formlyFields" [model]="model"></formly-form>
+    <ng-container *ngFor="let item of fields">
+        <ng-container *ngIf="item.type === 'int'" >
+            <input type="number" class="{{item.classNames}}" form>
+        </ng-container>
+    </ng-container>
     <ng-container *ngIf="fields.definitions.length > 0" >
         <button type="submit" class="btn btn-primary d-block m-4" [disabled]="form.invalid">Submit</button>
     </ng-container>
-</form>
+</form> -->
+<label [attr.for]="input.key" class="block">
+    {{input.label}}
+</label>
+<div class="w-full" [ngSwitch]="input.type">
+    <input *ngSwitchCase="'string'" [placeholder]="input.placeholder"
+        [(ngModel)]="input.value" class="{{inputClass}}" [id]="input.key" type="text">
+
+    <select *ngSwitchCase="'enum'" class="{{inputClass}}" [placeholder]="input.placeholder"
+    [(ngModel)]="input.value" [id]="input.key">
+        <option [ngValue]="undefined" [disabled]="true">Select...</option>
+        <option *ngFor="let item of input.enumValues" [value]="item">
+            {{item}}
+        </option>
+    </select>
+</div>

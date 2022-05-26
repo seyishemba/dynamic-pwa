@@ -7,9 +7,12 @@
             bgi-no-repeat bgi-size-contain bgi-attachment-fixed">
         <div class="d-flex flex-center flex-column flex-column-fluid p-10">
             <div class="login-form">
-                <!--begin::Form-->
-                <!-- <app-pi-forms [getFormObjectUrl]="'https://localhost:6000/form'" [inspectionId]="1234" (formChange)="getFormData($event)"></app-pi-forms> -->
-                <app-pi-forms [useUrl]="false" [fields]="fields" (formChanges)="getFormData($event)"></app-pi-forms>
+               <div>
+                <app-pi-forms *ngFor="let item of fields.definitions" [input]="item"></app-pi-forms>
+                <button type="submit" class="btn btn-primary d-block m-4" (click)="getFormData(fields.definitions)"  >Submit</button>
+
+                <app-pi-forms [input]="individual" [inputClass]="'form-control-info full-width rounded'"></app-pi-forms>
+               </div>
                 <!--end::Form-->
 
             </div>
