@@ -9,6 +9,11 @@ const routes: Routes = [
         loadChildren: () => import('account/account.module').then((m) => m.AccountModule), //Lazy load account module
         data: { preload: true },
     },
+    {
+        path: 'forms',
+        loadChildren: () => import('app-forms/app-forms.module').then((m) => m.AppFormsModule), //Lazy load forms test module
+        data: { preload: true }
+    },
     { path: '**', redirectTo: '/app/main/dashboard' },
 ];
 

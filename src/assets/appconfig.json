@@ -1,6 +1,7 @@
 ﻿{
   "remoteServiceBaseUrl": "https://api.sentinel.care",
-  "appBaseUrl": "https://sentinelinspector.netlify.app/",
+  //"appBaseUrl": "https://sentinelinspector.netlify.app/",
+  "appBaseUrl": "http://localhost:4200",
   "localeMappings": {
     "angular": [
       {

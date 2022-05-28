@@ -270,7 +270,7 @@ function handleLogoutRequest(authService: AppAuthService) {
         ServiceProxyModule,
         HttpClientModule,
         RootRoutingModule,
-        NgxSpinnerModule,
+        NgxSpinnerModule
     ],
     declarations: [RootComponent],
     providers: [
