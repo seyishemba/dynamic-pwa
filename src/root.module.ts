@@ -32,8 +32,6 @@ import { NgxBootstrapDatePickerConfigService } from 'assets/ngx-bootstrap/ngx-bo
 import { LocaleMappingService } from '@shared/locale-mapping.service';
 import { NgxSpinnerModule, NgxSpinnerService } from 'ngx-spinner';
 import { DateTimeService } from '@app/shared/common/timing/date-time.service';
-import { FormlyModule } from '@ngx-formly/core';
-import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 
 export function appInitializerFactory(injector: Injector, platformLocation: PlatformLocation) {
     return () => {
@@ -272,9 +270,7 @@ function handleLogoutRequest(authService: AppAuthService) {
         ServiceProxyModule,
         HttpClientModule,
         RootRoutingModule,
-        NgxSpinnerModule,
-        FormlyModule.forRoot(),
-        FormlyPrimeNGModule
+        NgxSpinnerModule
     ],
     declarations: [RootComponent],
     providers: [
