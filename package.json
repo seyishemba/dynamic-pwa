@@ -49,6 +49,7 @@
     "localforage": "^1.10.0",
     "lodash-es": "^4.17.21",
     "luxon": "^2.0.2",
+    "mdb-angular-ui-kit": "^2.2.0",
     "msal": "^1.4.13",
     "ng2-file-upload": "^1.4.0",
     "ngx-bootstrap": "^8.0.0",

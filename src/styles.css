@@ -164,4 +164,4 @@ bs-days-calendar-view {
     border-radius: 4px 0 0 4px;
 }
 @import '~lightgallery/scss/lightgallery';
-
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";

@@ -106,6 +106,7 @@ import { ViewJobComponent } from './components/view-job/view-job.component';
 import { InspectionComponent } from './components/tabs/inspection/inspection.component';
 import { NotesComponent } from './components/tabs/notes/notes.component';
 import { PhotosComponent } from './components/tabs/photos/photos.component';
+import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 
 @NgModule({
     declarations: [
@@ -204,7 +205,7 @@ import { PhotosComponent } from './components/tabs/photos/photos.component';
         SubheaderModule,
         LightgalleryModule,
         BrowserModule,
-
+        MdbTabsModule
 
     ],
     providers: [

@@ -1,53 +1,57 @@
+    <section>
+        <div class="row">
+          <div class="col-10">
+            <input type="text" placeholder="Search..." class="p-5 m-5 rounded-[15px] mt-5 w-full shadow-md">
+          </div>
+          <!-- ... -->
+          <div class="col-2 text-right">
+            <button class="m-5 mt-5 d-inline-flex align-items-center justify-between p-5 rounded-full bg-[#D9D9D9]"> <img src="{{ env.assets }}/list-jobs/clear.png" class="w-[20px]" /></button>
+          </div>
+          <div class="col-12 p-15 py-0 pb-5">
+              <h4 class="border-b-[3px] border-[#004263]/[.20] pb-2 text-[#004263]">
+                  22 Pending Tasks
+              </h4>
+          </div>
+        </div>
+    </section>
 
     <section>
-        <div id="search-box">
-            <div id="search-box-container">
-                <div id="search-bar">
-                    <input type="text" placeholder="Search...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-                <div class="header-btns">
-                    <a href="#" class="btn1">Complete</a>
-                    <a href="#" class="btn2">Update</a>
-                    <a href="#" class="btn3">Close</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div id="client-card">
-            <div class="client-container">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="notification">
-                            <p>10</p>
-                        </div>
-                        <i class="fa-solid fa-file"></i>
-                        <h4>Reports</h4>
-                    </div>
-                    <div class="client-info">
-                        <div class="img">
-                            <img src="./img/home.jpg" alt="">
-                        </div>
-                        <div class="bar"></div>
-                        <div class="client-detail">
-                            <h3>Kennen Palm</h3>
-                            <p>121 Happy Way</p>
-                            <p>Woodstock, GA 12111</p>
-                            <p>615-419-6646</p>
-                            <P>kenn@kennpalm.com</P>
+        <div class="p-5" routerLink="view-job">
+            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[91%] mt-[-20px] z-50 px-4 py-2 bg-[#CDDBE2]"> 10 </button>
+            <div class="card">
+                <div class="row p-6 pb-0">
+                    <div class="col-2 border-r-[2px] border-[#DEDEDE]">
+                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]"> 
                         </div>
                     </div>
-                    <div class="bottom">
-                        <div class="bottom-container">
-                            <div class="text">
-                                <i class="fa-solid fa-message"></i>
-                                <p>Note: Call Client before arriving!</p>
-                            </div>
-                            <a href="#" class="btns-click">+ 5 More</a>
+                    <div class="col-7">
+                        <div class="pl-[20px]">
+                            <h2>Kennen Palm</h2>
+                            <p>
+                                121 Happy Way,<br>
+                                Woodstock, GA 12111 <br>
+                                615-419-6646<br>
+                                kenn@kennpalm.com
+                            </p>
                         </div>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="text-[#004263] font-semibold  ">Reports <i class="fas fa-file text-[#004263]"></i> </p>
+                        <p><i class="fas fa-chevron-right text-[#CDDBE2] text-7xl mt-6"></i></p>
                     </div>
                 </div>
             </div>
+            <div class="p-4 bg-[#EEDDB2]">
+                <span>
+                    <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
+                </span>
+                <span class="border-b-[1.5px] border-black/[.40] float-right">
+                    +5 More
+                </span>
+            </div>
         </div>
+
+
+        
     </section>
+

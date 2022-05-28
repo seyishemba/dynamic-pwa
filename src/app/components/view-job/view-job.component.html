@@ -1,159 +1,80 @@
 <app-header></app-header>
+    <section>
+        <div class="row p-5">
+          <div class="col-3 p-4">
+            <input type="text" placeholder="Search..." class="rounded-[15px] p-5 w-full shadow-md">
+          </div>
+          <!-- ... -->
+          <div class="col-3 p-4">
+            <button class="btn-success p-5 rounded w-full text-center"> Complete </button>
+          </div>
+          <div class="col-3 p-4">
+            <button class="btn-primary p-5 rounded w-full text-center"> Update </button>
+          </div>
+          <div class="col-3 p-4">
+            <button class="btn-danger p-5 rounded w-full text-center"> Close </button>
+          </div>
+
+          </div>
+    </section>
 
     <section>
-        <div id="search-box">
-            <div id="search-box-container">
-                <div id="search-bar">
-                    <input type="text" placeholder="Search...">
-                    <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="p-5" routerLink="view-job">
+            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[91%] mt-[-20px] z-50 px-4 py-2 bg-[#CDDBE2]"> 10 </button>
+            <div class="card">
+                <div class="row p-6 pb-0">
+                    <div class="col-2 border-r-[2px] border-[#DEDEDE]">
+                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]"> 
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <div class="pl-[20px]">
+                            <h2>Kennen Palm</h2>
+                            <p>
+                                121 Happy Way,<br>
+                                Woodstock, GA 12111 <br>
+                                615-419-6646<br>
+                                kenn@kennpalm.com
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="text-[#004263] font-semibold  ">Reports <i class="fas fa-file text-[#004263]"></i> </p>
+                        <p><i class="fas fa-chevron-right text-[#CDDBE2] text-7xl mt-6"></i></p>
+                    </div>
                 </div>
-                <div class="header-btns">
-                    <a href="#" class="btn1">Complete</a>
-                    <a href="#" class="btn2">Update</a>
-                    <a href="#" class="btn3">Close</a>
-                </div>
+            </div>
+            <div class="p-4 bg-[#EEDDB2]">
+                <span>
+                    <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
+                </span>
+                <span class="border-b-[1.5px] border-black/[.40] float-right">
+                    +5 More
+                </span>
             </div>
         </div>
     </section>
     <section>
-        <div id="client-card">
-            <div class="client-container">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="notification">
-                            <p>10</p>
-                        </div>
-                        <i class="fa-solid fa-file"></i>
-                        <h4>Reports</h4>
-                    </div>
-                    <div class="client-info">
-                        <div class="img">
-                            <img src="./img/home.jpg" alt="">
-                        </div>
-                        <div class="bar"></div>
-                        <div class="client-detail">
-                            <h3>Kennen Palm</h3>
-                            <p>121 Happy Way</p>
-                            <p>Woodstock, GA 12111</p>
-                            <p>615-419-6646</p>
-                            <P>kenn@kennpalm.com</P>
-                        </div>
-                    </div>
-                    <div class="bottom">
-                        <div class="bottom-container">
-                            <div class="text">
-                                <i class="fa-solid fa-message"></i>
-                                <p>Note: Call Client before arriving!</p>
-                            </div>
-                            <a href="#" class="btns-click">+ 5 More</a>
-                        </div>
-                    </div>
-                </div>
+        <div class="row p-40 py-0">
+            <div class="col-6">
+                <button class="btn-primary p-5 rounded w-full text-center">Start Drive</button>
+            </div>
+            <div class="col-6">
+                <button class="btn-primary p-5 rounded w-full text-center">Clock In</button>
             </div>
         </div>
     </section>
+
     <section>
-        <div id="buttons">
-            <div class="buttons-container">
-                <div class="top-btns">
-                    <a href="#">Start Drive</a>
-                    <a href="#">Clock In</a>
-                </div>
-                <div class="bottom-btns">
-                    <a href="#" id="inspection-btn">Inspection</a>
-                    <a href="#" id="note-btn">Notes</a>
-                    <a href="#" id="photo-btn">Photos</a>
-                </div>
-            </div>
-        </div>
+        <mdb-tabs>
+          <mdb-tab title="Inspection">
+              <app-inspection></app-inspection>
+          </mdb-tab>
+          <mdb-tab title="Notes">
+              <app-notes></app-notes>
+          </mdb-tab>
+          <mdb-tab title="Photos">
+              <app-photos></app-photos>
+          </mdb-tab>
+        </mdb-tabs>
     </section>
-    <section>
-        <div id="notes">
-            <div class="note-container">
-                <div class="note-header">
-                    <p><span class="dark">Swipe</span> note to the left to <span>Delete</span> and Tap to Edit</p>
-                </div>
-                <div class="notes">
-                    <p class="date">2021-05-08 15:15 KMP</p>
-                    <p class="text">Here is a note that was added to the opportunity</p>
-                </div>
-                <div class="notes">
-                    <p class="date">2021-05-08 15:15 KMP</p>
-                    <p class="text">Here is a note that was added to the opportunity</p>
-                </div>
-                <a href="#" class="add-notes">Tap to Add New Note</a>
-                <div id="new-notes-block">
-                    <div class="new-notes">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Type additional note here"></textarea>
-                        <div class="add-btn">
-                            <p>+</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="h-bar"></div>
-                <div class="func-btn">
-                    <a href="#" class="comp">Complete</a>
-                    <a href="#" class="upd">Update</a>
-                    <a href="#" class="clos">Close</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="photos">
-            <div class="photos-container">
-                <div class="photo-card">
-                    <h4>Lightbox Question</h4>
-                    <div class="img-input">
-                        <div>
-                            <img src="./img/home.jpg" class="img-upload" alt="">
-                        </div>
-                        <div>
-                            <input type="file" id="upload" accept="image/*" style="display: none;">
-                            <label for="upload" class="upload">+</label>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="inspection">
-            <div class="inspection-container">
-                <div class="fields">
-                    <input type="text" placeholder="Text Question">
-                </div>
-                <div class="fields lg-inp">
-                    <input type="text" placeholder="Paragraph Question">
-                </div>
-                <div class="inspection-btns">
-                    <div class="top">
-                        <a href="#">
-                            Numeric Question
-                        </a>
-                        <a href="#">
-                            Date Question
-                        </a>
-                    </div>
-                    <div class="bottom-btn">
-                        <a href="#">
-                            Time Question
-                        </a>
-                        <a href="#">
-                            Checkbox Question
-                        </a>
-                    </div>
-                </div>
-                <div class="inspect-text">
-                    <h4>Lightbox Question</h4>
-                    <div class="h-bar"></div>
-                    <div class="func-btn">
-                        <a href="#" class="comp">Complete</a>
-                        <a href="#" class="upd">Update</a>
-                        <a href="#" class="clos">Close</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-<script src="https://kit.fontawesome.com/a5717fc95e.js" crossorigin="anonymous"></script>
