@@ -24,7 +24,7 @@
             <div class="card">
                 <div class="row p-6 pb-0">
                     <div class="col-2 border-r-[2px] border-[#DEDEDE]">
-                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]"> 
+                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]">
                         </div>
                     </div>
                     <div class="col-7">
@@ -73,8 +73,14 @@
           <mdb-tab title="Notes">
               <app-notes></app-notes>
           </mdb-tab>
-          <mdb-tab title="Photos">
+          <mdb-tab title="Interior">
               <app-photos></app-photos>
           </mdb-tab>
+          <mdb-tab title="Exterior">
+            <app-photos></app-photos>
+        </mdb-tab>
+        <mdb-tab title="Hover">
+            <app-photos></app-photos>
+        </mdb-tab>
         </mdb-tabs>
     </section>
