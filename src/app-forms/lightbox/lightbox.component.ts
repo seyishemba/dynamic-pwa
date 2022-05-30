@@ -12,10 +12,23 @@ import { LightboxData } from './lightbox-data';
   styleUrls: ['./lightbox.component.css']
 })
 export class LightboxComponent implements OnInit, AfterViewChecked {
+    /**
+     * handles both previous and current images loaded to light box
+     */
     @Input() lightboxData: Array<LightboxData> = [];
     files: Array<any> = [];
+
+    /**
+     * handles current image  being added to lightbox
+     */
     @Input() currentImage: LightboxData;
+    /**
+     *
+     */
     private lightCallery!: LightGallery;
+    /**
+     * refreshes view after new image upload
+     */
     private refresh = false;
     accepts = 'image/png, image/jpeg, image/jpg';
   constructor(public sanitize: DomSanitizer, private service: LightboxService) { }
