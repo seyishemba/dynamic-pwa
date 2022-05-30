@@ -7,7 +7,6 @@
 </div>
 <div class="w-full">
     <lightgallery [onInit]="onInit" [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="flex justify-center">
-
         <a class="gallery-item" *ngFor="let item of lightboxData"
         [attr.href]="item.href"
         data-responsive="{{item.href}}"

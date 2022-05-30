@@ -21,7 +21,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
   constructor(public sanitize: DomSanitizer, private service: LightboxService) { }
     ngAfterViewChecked(): void {
         if (this.refresh) {
-            // this.lightCallery.refresh();
+            this.lightCallery.refresh();
         }
     }
 
