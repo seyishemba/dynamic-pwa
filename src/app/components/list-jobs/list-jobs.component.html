@@ -5,10 +5,10 @@
           </div>
           <!-- ... -->
           <div class="col-2 text-right">
-            <button class="m-5 mt-5 d-inline-flex align-items-center justify-between p-5 rounded-full bg-[#D9D9D9]"> <img src="{{ env.assets }}/list-jobs/clear.png" class="w-[20px]" /></button>
+            <button class="m-5 mt-5 d-inline-flex align-items-center justify-between p-1 rounded-full bg-[#D9D9D9]"> <img src="{{ env.assets }}/list-jobs/clear.png" class="w-[40px]" /></button>
           </div>
-          <div class="col-12 p-15 py-0 pb-5">
-              <h4 class="border-b-[3px] border-[#004263]/[.20] pb-2 text-[#004263]">
+          <div class="col-12 p-15 py-0 pb-5 mb-3">
+              <h4 class="border-b-[3px] border-[#004263]/[.20] pb-2 text-[#004263] font-extrabold mt-3">
                   22 Pending Tasks
               </h4>
           </div>
@@ -17,31 +17,32 @@
 
     <section>
         <div class="p-5" routerLink="view-job">
-            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[91%] mt-[-20px] z-50 px-4 py-2 bg-[#CDDBE2]"> 10 </button>
-            <div class="card">
+            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[90%] mt-[-25px] z-50 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]"> 10 </button>
+            <div class="rounded-[20px] shadow-md bg-[#fff] border-[2px] border-[#C8C8C8]/[.5]">
                 <div class="row p-6 pb-0">
                     <div class="col-2 border-r-[2px] border-[#DEDEDE]">
-                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]"> 
+                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100%] h-[80%] border-[#004263] border-4"> 
                         </div>
                     </div>
                     <div class="col-7">
                         <div class="pl-[20px]">
-                            <h2>Kennen Palm</h2>
-                            <p>
-                                121 Happy Way,<br>
-                                Woodstock, GA 12111 <br>
-                                615-419-6646<br>
-                                kenn@kennpalm.com
-                            </p>
+                            <h1 class="font-extrabold   ">Kennen Palm</h1>
+                            <div class="italic mt-3 mb-3">
+                            <h5 class="font-medium">
+                                121 Happy Way,</h5>
+                                <h5 class="font-medium">Woodstock, GA 12111 </h5>
+                                <h5 class="font-medium">615-419-6646</h5>
+                                <h5 class="font-medium">kenn@kennpalm.com
+                            </h5>
+                             </div>
                         </div>
                     </div>
                     <div class="col-3 text-right">
-                        <p class="text-[#004263] font-semibold  ">Reports <i class="fas fa-file text-[#004263]"></i> </p>
-                        <p><i class="fas fa-chevron-right text-[#CDDBE2] text-7xl mt-6"></i></p>
+                        <p class="text-[#004263] font-medium text-2xl ">Reports <i class="fas fa-file text-[#00446178] text-[20px] ml-[20px]"></i> </p>
+                        <p><i class="fas fa-chevron-right text-[#8ea6b4] text-7xl mt-6"></i></p>
                     </div>
                 </div>
-            </div>
-            <div class="p-4 bg-[#EEDDB2]">
+                <div class="p-4 bg-[#EEDDB2] rounded-br-[20px] rounded-bl-[20px]">
                 <span>
                     <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
                 </span>
@@ -49,117 +50,11 @@
                     +5 More
                 </span>
             </div>
+            </div>
+            
         </div>
 
 
-
-        <div class="p-5" routerLink="view-job">
-            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[91%] mt-[-20px] z-50 px-4 py-2 bg-[#CDDBE2]"> 10 </button>
-            <div class="card">
-                <div class="row p-6 pb-0">
-                    <div class="col-2 border-r-[2px] border-[#DEDEDE]">
-                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]"> 
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="pl-[20px]">
-                            <h2>Kennen Palm</h2>
-                            <p>
-                                121 Happy Way,<br>
-                                Woodstock, GA 12111 <br>
-                                615-419-6646<br>
-                                kenn@kennpalm.com
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="text-[#004263] font-semibold  ">Reports <i class="fas fa-file text-[#004263]"></i> </p>
-                        <p><i class="fas fa-chevron-right text-[#CDDBE2] text-7xl mt-6"></i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 bg-[#EEDDB2]">
-                <span>
-                    <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
-                </span>
-                <span class="border-b-[1.5px] border-black/[.40] float-right">
-                    +5 More
-                </span>
-            </div>
-        </div>
-
-
-
-        <div class="p-5" routerLink="view-job">
-            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[91%] mt-[-20px] z-50 px-4 py-2 bg-[#CDDBE2]"> 10 </button>
-            <div class="card">
-                <div class="row p-6 pb-0">
-                    <div class="col-2 border-r-[2px] border-[#DEDEDE]">
-                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]"> 
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="pl-[20px]">
-                            <h2>Kennen Palm</h2>
-                            <p>
-                                121 Happy Way,<br>
-                                Woodstock, GA 12111 <br>
-                                615-419-6646<br>
-                                kenn@kennpalm.com
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="text-[#004263] font-semibold  ">Reports <i class="fas fa-file text-[#004263]"></i> </p>
-                        <p><i class="fas fa-chevron-right text-[#CDDBE2] text-7xl mt-6"></i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 bg-[#EEDDB2]">
-                <span>
-                    <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
-                </span>
-                <span class="border-b-[1.5px] border-black/[.40] float-right">
-                    +5 More
-                </span>
-            </div>
-        </div>
-
-
-        <div class="p-5" routerLink="view-job">
-            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[91%] mt-[-20px] z-50 px-4 py-2 bg-[#CDDBE2]"> 10 </button>
-            <div class="card">
-                <div class="row p-6 pb-0">
-                    <div class="col-2 border-r-[2px] border-[#DEDEDE]">
-                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100px] h-[100px]"> 
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="pl-[20px]">
-                            <h2>Kennen Palm</h2>
-                            <p>
-                                121 Happy Way,<br>
-                                Woodstock, GA 12111 <br>
-                                615-419-6646<br>
-                                kenn@kennpalm.com
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="text-[#004263] font-semibold  ">Reports <i class="fas fa-file text-[#004263]"></i> </p>
-                        <p><i class="fas fa-chevron-right text-[#CDDBE2] text-7xl mt-6"></i></p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-4 bg-[#EEDDB2]">
-                <span>
-                    <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
-                </span>
-                <span class="border-b-[1.5px] border-black/[.40] float-right">
-                    +5 More
-                </span>
-            </div>
-        </div>
 
 
 
