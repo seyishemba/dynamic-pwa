@@ -87,8 +87,8 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
                      this.files.push(event.target.result);
 
                     this.refresh = true;
-                    
-                    this.handleFileData(this.files)
+
+                    this.handleFileData(this.lightboxData)
                  };
                  /**
                   * reads the image and converts to base64

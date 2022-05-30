@@ -1,7 +1,7 @@
  <mdb-tabs>
   <mdb-tab title="Project">
 
- 
+
  <section>
  	<div class="lightbox-album p-5">
  		Selected Album: Project
@@ -11,8 +11,8 @@
  		<input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">
  		<input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData.title">
  		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
- 		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" [(ngModel)]="lightboxData.tags">
- 		
+ 		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData.tags[1].tag">
+
  		<app-lightbox [lightboxData]="lightboxData"></app-lightbox>
 
  	</div>
@@ -20,7 +20,37 @@
 
   </mdb-tab>
   <mdb-tab title="Interior">
+    <section>
+        <div class="lightbox-album p-5">
+            Selected Album: Project
+        </div>
+        <div class="lightbox-upload-form p-10">
+            <p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Selected" Album</p>
+            <input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">
+            <input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData.title">
+            <input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
+            <input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" [(ngModel)]="lightboxData.tags[0].tag">
+
+            <app-lightbox [lightboxData]="lightboxData"></app-lightbox>
+
+        </div>
+    </section>
   </mdb-tab>
   <mdb-tab title="Exterior">
+    <section>
+        <div class="lightbox-album p-5">
+            Selected Album: Project
+        </div>
+        <div class="lightbox-upload-form p-10">
+            <p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Selected" Album</p>
+            <input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">
+            <input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData.title">
+            <input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
+             <input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')"  [(ngModel)]="lightboxData.tags[0].tag">
+
+            <app-lightbox [lightboxData]="lightboxData"></app-lightbox>
+
+        </div>
+    </section>
   </mdb-tab>
 </mdb-tabs>
