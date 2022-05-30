@@ -13,7 +13,7 @@
  		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
  		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData.tags[1].tag">
 
- 		<app-lightbox [lightboxData]="lightboxData"></app-lightbox>
+ 		<app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData"></app-lightbox>
 
  	</div>
  </section>
@@ -31,7 +31,7 @@
             <input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
             <input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" [(ngModel)]="lightboxData.tags[0].tag">
 
-            <app-lightbox [lightboxData]="lightboxData"></app-lightbox>
+            <app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData"></app-lightbox>
 
         </div>
     </section>
@@ -48,7 +48,7 @@
             <input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
              <input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')"  [(ngModel)]="lightboxData.tags[0].tag">
 
-            <app-lightbox [lightboxData]="lightboxData"></app-lightbox>
+            <app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData"></app-lightbox>
 
         </div>
     </section>

@@ -1,22 +1,22 @@
 <div>
     <h3>Received Data:</h3>
     <div>
-        <p>{{ lightboxData.title }}</p>
-        <p>{{ lightboxData.description }}</p>
+        <p>{{ currentImage?.title }}</p>
+        <p>{{ currentImage?.description }}</p>
     </div>
 </div>
 <div class="w-full">
     <lightgallery [onInit]="onInit" [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="flex justify-center">
 
-        <a class="gallery-item" *ngFor="let item of files"
-        [attr.href]="item"
-        data-responsive="{{item}}"
-        data-sub-html="Sample">
+        <a class="gallery-item" *ngFor="let item of lightboxData"
+        [attr.href]="item.href"
+        data-responsive="{{item.href}}"
+        data-sub-html="{{item.title}}">
         <img class="img-responsive"
-          src="{{item}}" />
+          src="{{item.href}}" />
       </a>
     </lightgallery>
-    <ng-container *ngIf="files.length === 0">
+    <ng-container *ngIf="lightboxData.length === 0">
         <div class="flex justify-center w-full">
             <label class="text-3xl py-40">
                Please No Images Selected
@@ -24,7 +24,7 @@
         </div>
     </ng-container>
     <input class="form-control" type="file" #document
-    (change)="onFileChange($event)" accept="{{accepts}}" multiple hidden>
+    (change)="onFileChange($event)" accept="{{accepts}}" hidden>
     <div class="flex w-full justify-center">
      <button (click)="document.click()"
           class="btn btn-success">

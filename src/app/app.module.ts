@@ -1,4 +1,5 @@
-﻿import { CommonModule } from '@angular/common';
+﻿import { AppFormsModule } from './../app-forms/app-forms.module';
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
@@ -97,16 +98,16 @@ import { AppBsModalModule } from '@shared/common/appBsModal/app-bs-modal.module'
 import { SubheaderModule } from './shared/common/sub-header/subheader.module';;
 import { LoginComponent } from './components/login/login.component';
 import { HeaderComponent } from './components/common/header/header.component'
-import { LightgalleryModule } from 'lightgallery/angular';;
-import { LightboxComponent } from './components/common/lightbox/lightbox.component';
+import { LightgalleryModule } from 'lightgallery/angular';
 import { DashboardComponent } from './components/dashboard/dashboard.component'
-import { BrowserModule } from '@angular/platform-browser';;
+import { BrowserModule } from '@angular/platform-browser';
 import { ListJobsComponent } from './components/list-jobs/list-jobs.component';
 import { ViewJobComponent } from './components/view-job/view-job.component';
 import { InspectionComponent } from './components/tabs/inspection/inspection.component';
 import { NotesComponent } from './components/tabs/notes/notes.component';
 import { PhotosComponent } from './components/tabs/photos/photos.component';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
+import { LightboxComponent } from 'app-forms/lightbox/lightbox.component';
 
 @NgModule({
     declarations: [
@@ -168,7 +169,6 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
         DefaultLogoComponent,
         LoginComponent,
         HeaderComponent,
-        LightboxComponent,
         DashboardComponent,
         ListJobsComponent,
         ViewJobComponent,
@@ -205,7 +205,8 @@ import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
         SubheaderModule,
         LightgalleryModule,
         BrowserModule,
-        MdbTabsModule
+        MdbTabsModule,
+        AppFormsModule
 
     ],
     providers: [

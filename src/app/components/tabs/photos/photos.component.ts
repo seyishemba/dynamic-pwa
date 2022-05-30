@@ -1,4 +1,6 @@
+
 import { Component, OnInit } from '@angular/core';
+import { LightboxData } from 'app-forms/lightbox/lightbox-data';
 
 @Component({
   selector: 'app-photos',
@@ -6,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photos.component.css']
 })
 export class PhotosComponent implements OnInit {
-
+lightBoxList: Array<LightboxData> = [];
   constructor() { }
   lightboxData:any ={
     "id": "01",
@@ -20,7 +22,7 @@ export class PhotosComponent implements OnInit {
   };
 
   ngOnInit(): void {
+    //   this.lightBoxList.push(this.lightboxData);
   }
 
 }
-        

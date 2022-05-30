@@ -47,6 +47,24 @@ export class AppFormsComponent implements OnInit {
                 label: 'Age',
                 placeholder: 'Enter Age',
                 type: 'int'
+            },
+            {
+                key: 'images',
+                value: {
+                    "id": "01",
+                    "href": "",
+                    "thumbnailHref" : "",
+                    "sequence" : "0",
+                    "title" : "Happy Image",
+                    "description" : "This is a happy image",
+                    "tags" : [{ "tag" : "client", "weight" : "99"}, { "tag" : "profile", "weight" : "99"}],
+                    "metadata" : { "some_attribute" : "some value" }
+                  },
+                required: true,
+                label: 'Select Images',
+                placeholder: 'Select Images',
+                type: 'lightbox',
+                lightboxData: []
             }
         ]
     };
@@ -58,6 +76,25 @@ export class AppFormsComponent implements OnInit {
         label: 'Email',
         placeholder: 'Enter email',
         type: 'string'
+    };
+
+    lightbox: FormDefinitions = {
+        key: 'images',
+        value: {
+            "id": "01",
+            "href": "",
+            "thumbnailHref" : "",
+            "sequence" : "0",
+            "title" : "Happy Image",
+            "description" : "This is a happy image",
+            "tags" : [{ "tag" : "client", "weight" : "99"}, { "tag" : "profile", "weight" : "99"}],
+            "metadata" : { "some_attribute" : "some value" }
+          },
+        required: true,
+        label: 'Select Images',
+        placeholder: 'Select Images',
+        type: 'lightbox',
+        lightboxData: []
     };
     constructor(private fb: FormBuilder) {
     }
