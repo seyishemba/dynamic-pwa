@@ -1,5 +1,5 @@
 import { LightboxService } from './lightbox.service';
-import { Component, OnInit, AfterViewChecked } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, Input } from '@angular/core';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -11,6 +11,7 @@ import { LightGallery } from 'lightgallery/lightgallery';
   styleUrls: ['./lightbox.component.css']
 })
 export class LightboxComponent implements OnInit, AfterViewChecked {
+    @Input() lightboxData: any;
     files: Array<any> = [];
     private lightCallery!: LightGallery;
     private refresh = false;
@@ -47,7 +48,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
    * File upload from client machine method
    * @param file images
    */
-  uploadFileData(){
+  handleFileData(files){
     // {
     //     "href" : "https://images.google.com/someimage.jpg",
     //     "thumbnailHref" : "https://images.google.com/someimage.jpg",
@@ -57,6 +58,10 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
     //     "tags" : [{ "tag" : "client", "weight" : "99"}, { "tag" : "profile", "weight" : "99"}],
     //     "metadata" : { "some_attribute" : "some value" }
     //   }
+    console.log(files)
+    this.lightboxData.href = files[0]
+    this.lightboxData.thumbnailHref = files[0]
+    console.log(this.lightboxData)
   }
   onFileChange(file: any): void {
       /**
@@ -82,12 +87,13 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
                      this.files.push(event.target.result);
 
                     this.refresh = true;
+                    
+                    this.handleFileData(this.files)
                  };
                  /**
                   * reads the image and converts to base64
                   */
                  reader.readAsDataURL(image);
-                 console.log(this.files)
              }
          }
          /**
