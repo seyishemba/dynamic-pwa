@@ -1,56 +1,145 @@
- <mdb-tabs>
-  <mdb-tab title="Project">
+ <mdb-tabs [fill]="true">
+  <mdb-tab title="Project ({{ lightBoxList.length }})">
 
 
  <section>
  	<div class="lightbox-album p-5">
- 		Selected Album: Project
+ 		<div class="row">
+ 			<div class="col-6">
+ 				<strong>Selected Album:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				Project
+ 			</div>
+ 			<div class="col-6">
+ 				<strong>Title:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				{{lightboxData.title}}
+ 			</div>
+ 			<div class="col-6">
+ 				<strong>Description:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				{{lightboxData.description}}
+ 			</div>
+ 			<div class="col-6">
+ 				<button class="btn btn-primary btn-xs " *ngIf="!lightboxData.edit" (click)="lightboxData.edit = true">Edit Information</button>
+ 				<button class="btn btn-primary btn-xs " *ngIf="lightboxData.edit" (click)="lightboxData.edit = false">Done</button>
+ 			</div>
+
+ 		</div>
  	</div>
  	<div class="lightbox-upload-form p-10">
- 		<p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Selected" Album</p>
- 		<input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">
+ 		<ng-container  *ngIf="lightboxData.edit">
+ 		<p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Project" Album</p>
+ 		<!--<input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">-->
  		<input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData.title">
  		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
  		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData.tags[1].tag">
-
+ 		</ng-container>
  		<app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData"></app-lightbox>
 
  	</div>
  </section>
 
   </mdb-tab>
-  <mdb-tab title="Interior">
-    <section>
-        <div class="lightbox-album p-5">
-            Selected Album: Project
-        </div>
-        <div class="lightbox-upload-form p-10">
-            <p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Selected" Album</p>
-            <input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">
-            <input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData.title">
-            <input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
-            <input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" [(ngModel)]="lightboxData.tags[0].tag">
 
-            <app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData"></app-lightbox>
 
-        </div>
-    </section>
+<mdb-tab title="Interior ({{ lightBoxList2.length }})">
+
+
+ <section>
+ 	<div class="lightbox-album p-5">
+ 		<div class="row">
+ 			<div class="col-6">
+ 				<strong>Selected Album:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				Interior
+ 			</div>
+ 			<div class="col-6">
+ 				<strong>Title:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				{{lightboxData2.title}}
+ 			</div>
+ 			<div class="col-6">
+ 				<strong>Description:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				{{lightboxData2.description}}
+ 			</div>
+ 			<div class="col-6">
+ 				<button class="btn btn-primary btn-xs " *ngIf="!lightboxData2.edit" (click)="lightboxData2.edit = true">Edit Information</button>
+ 				<button class="btn btn-primary btn-xs " *ngIf="lightboxData2.edit" (click)="lightboxData2.edit = false">Done</button>
+ 			</div>
+
+ 		</div>
+ 	</div>
+ 	<div class="lightbox-upload-form p-10">
+ 		<ng-container  *ngIf="lightboxData2.edit">
+ 		<p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Interior" Album</p>
+ 		<!--<input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">-->
+ 		<input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData2.title">
+ 		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData2.description">
+ 		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData2.tags[1].tag">
+ 		</ng-container>
+ 		<app-lightbox [lightboxData]="lightBoxList2" [currentImage]="lightboxData2"></app-lightbox>
+
+ 	</div>
+ </section>
+
   </mdb-tab>
-  <mdb-tab title="Exterior">
-    <section>
-        <div class="lightbox-album p-5">
-            Selected Album: Project
-        </div>
-        <div class="lightbox-upload-form p-10">
-            <p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Selected" Album</p>
-            <input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">
-            <input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData.title">
-            <input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
-             <input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')"  [(ngModel)]="lightboxData.tags[0].tag">
 
-            <app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData"></app-lightbox>
 
-        </div>
-    </section>
+
+
+
+
+<mdb-tab title="Exterior ({{ lightBoxList3.length }})">
+ <section>
+ 	<div class="lightbox-album p-5">
+ 		<div class="row">
+ 			<div class="col-6">
+ 				<strong>Selected Album:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				Exterior
+ 			</div>
+ 			<div class="col-6">
+ 				<strong>Title:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				{{lightboxData3.title}}
+ 			</div>
+ 			<div class="col-6">
+ 				<strong>Description:</strong>
+ 			</div>
+ 			<div class="col-6">
+ 				{{lightboxData3.description}}
+ 			</div>
+ 			<div class="col-6">
+ 				<button class="btn btn-primary btn-xs " *ngIf="!lightboxData3.edit" (click)="lightboxData3.edit = true">Edit Information</button>
+ 				<button class="btn btn-primary btn-xs " *ngIf="lightboxData3.edit" (click)="lightboxData3.edit = false">Done</button>
+ 			</div>
+
+ 		</div>
+ 	</div>
+ 	<div class="lightbox-upload-form p-10">
+ 		<ng-container  *ngIf="lightboxData3.edit">
+ 		<p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Interior" Album</p>
+ 		<!--<input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">-->
+ 		<input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData3.title">
+ 		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData3.description">
+ 		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData3.tags[1].tag">
+ 		</ng-container>
+ 		<app-lightbox [lightboxData]="lightBoxList2" [currentImage]="lightboxData3"></app-lightbox>
+
+ 	</div>
+ </section>
+
   </mdb-tab>
+
+  
 </mdb-tabs>

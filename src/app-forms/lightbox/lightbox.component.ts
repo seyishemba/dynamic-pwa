@@ -108,6 +108,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
                 /**
                  * adds the base64 image to the file list for uploading
                  */
+            console.log(event.target.result)
 
                 const newImage : LightboxData = {
                     href: event.target.result,
@@ -126,6 +127,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
              * reads the image and converts to base64
              */
             reader.readAsDataURL(file.target.files[0]);
+            console.log(reader.readAsDataURL(file.target.files[0]))
         }
          /**
           * upload files to the server

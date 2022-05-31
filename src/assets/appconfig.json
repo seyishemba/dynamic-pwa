@@ -1,6 +1,6 @@
 ﻿{
   "remoteServiceBaseUrl": "https://api.sentinel.care",
-  "appBaseUrl": "http://localhost:4200",
+  "appBaseUrl": "https://sentinel.yeahsbuy.com",
   "localeMappings": {
     "angular": [
       {

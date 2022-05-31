@@ -1,24 +1,26 @@
-<div>
+<!-- <div>
     <h3>Received Data:</h3>
     <div>
         <p>{{ currentImage?.title }}</p>
         <p>{{ currentImage?.description }}</p>
     </div>
-</div>
+</div> -->
 <div class="w-full">
     <lightgallery [onInit]="onInit" [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="flex justify-center">
         <a class="gallery-item" *ngFor="let item of lightboxData"
         [attr.href]="item.href"
         data-responsive="{{item.href}}"
-        data-sub-html="{{item.title}}">
+        data-sub-html="Caption: {{item.title}}">
         <img class="img-responsive"
           src="{{item.href}}" />
+          {{item.title}} | {{item.description}}
+
       </a>
     </lightgallery>
     <ng-container *ngIf="lightboxData.length === 0">
         <div class="flex justify-center w-full">
             <label class="text-3xl py-40">
-               Please No Images Selected
+            No Images Selected
             </label>
         </div>
     </ng-container>
@@ -26,7 +28,16 @@
     (change)="onFileChange($event)" accept="{{accepts}}" hidden>
     <div class="flex w-full justify-center">
      <button (click)="document.click()"
-          class="btn btn-success">
+          class="btn btn-success" style="position: absolute;/* top: 0; */right: 0;bottom: 0;border-radius: 100%;padding: 40px 25px;margin-bottom: 20px;margin-right: 20px;
+    padding-bottom: 20px;    padding-top: 30px;">
+          <i class="fa fa-camera" aria-hidden="true" style="    font-size: 40px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+        color: black;
+    opacity: .3;
+    "></i>
+          <br>
+
           Upload
       </button>
     </div>

@@ -12,36 +12,37 @@ import { ViewJobComponent } from './components/view-job/view-job.component'
 @NgModule({
     imports: [
         RouterModule.forChild([
-            {
-                path: 'app',
-                component: AppComponent,
-                canActivate: [AppRouteGuard],
-                canActivateChild: [AppRouteGuard],
-                children: [
-                    {
-                        path: '',
-                        children: [
-                            { path: 'notifications', component: NotificationsComponent },
-                            { path: '', redirectTo: '/app/main/dashboard', pathMatch: 'full' },
-                        ],
-                    },
-                    {
-                        path: 'main',
-                        loadChildren: () => import('app/main/main.module').then((m) => m.MainModule), //Lazy load main module
-                        data: { preload: true },
-                    },
-                    {
-                        path: 'admin',
-                        loadChildren: () => import('app/admin/admin.module').then((m) => m.AdminModule), //Lazy load admin module
-                        data: { preload: true },
-                        canLoad: [AppRouteGuard],
-                    },
-                    {
-                        path: '**',
-                        redirectTo: 'notifications',
-                    },
-                ],
-            },
+            // {
+            //     path: 'app',
+            //     component: AppComponent,
+            //     canActivate: [AppRouteGuard],
+            //     canActivateChild: [AppRouteGuard],
+            //     children: [
+            //         {
+            //             path: '',
+            //             children: [
+            //                 { path: 'notifications', component: NotificationsComponent },
+            //                 { path: '', redirectTo: '/app/main/dashboard', pathMatch: 'full' },
+            //             ],
+            //         },
+            //         {
+            //             path: 'main',
+            //             loadChildren: () => import('app/main/main.module').then((m) => m.MainModule), //Lazy load main module
+            //             data: { preload: true },
+            //         },
+            //         {
+            //             path: 'admin',
+            //             loadChildren: () => import('app/admin/admin.module').then((m) => m.AdminModule), //Lazy load admin module
+            //             data: { preload: true },
+            //             canLoad: [AppRouteGuard],
+            //         },
+            //         {
+            //             path: '**',
+            //             redirectTo: 'notifications',
+            //         },
+            //     ],
+            // },
+            { path: '', redirectTo: '/login', pathMatch: 'full' },
             { path: 'login', component: LoginComponent },
             { path: 'component-dashboard', component: DashboardComponent },
             { path: 'component-dashboard/view-job', component: ViewJobComponent },

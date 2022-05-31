@@ -3,16 +3,20 @@
 <nav class="bg-[#004263]   border-gray-200 px-2 sm:px-4 py-2.5 dark:bg-gray-800">
 <div class="container flex flex-wrap justify-between items-center mx-auto">
 <a href="/" class="flex items-center">
-<img src="{{ env.assets }}/common/logo.png" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo">
+<img src="{{ env.assets }}/common/logo.png" class="mr-3 h-6 sm:h-9" alt="Logo">
 <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
 {{ env.name }}</span>
 </a>
 <div class="flex md:order-2">
 
 
-<button type="button" class="btn btn-outline btn-outline-primary border-2">
+<button *ngIf="page == 'login'" type="button" class="btn btn-outline btn-outline-primary border-2">
 	<i class="fas fa-arrow-left text-inherit"></i>
 	Back to Website
+</button>
+
+<button *ngIf="page !== 'login'" type="button" class="btn">
+	<img src="{{ env.assets }}/common/dashboard-nav.png" class="mr-3 h-6 sm:h-9">
 </button>
 
 
