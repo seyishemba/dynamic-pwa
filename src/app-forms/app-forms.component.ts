@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormDefinitions } from './pi-forms/form-definitions';
 
 @Component({
-    selector: 'app-app-forms',
+    selector: 'app-dynamic-forms',
     templateUrl: './app-forms.component.html',
     styleUrls: ['./app-forms.component.less']
 })
