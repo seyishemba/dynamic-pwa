@@ -6,28 +6,43 @@
     </div>
 </div> -->
 <div class="w-full">
-    <lightgallery [onInit]="onInit" [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="flex justify-center">
-        <a class="gallery-item" *ngFor="let item of lightboxData"
-        [attr.href]="item.href"
+          <button (click)="upload()" class="text-[#fff] pl-6 pr-6 pt-4 pb-4 bg-[#004362] float-right rounded btn-sm mt-5 mr-5">Edit Info</button>
+
+    <lightgallery [onInit]="onInit" [settings]="settings" [onBeforeSlide]="onBeforeSlide" class="flex flex-wrap mt-15 w-full p-5">
+        <ng-container *ngFor="let item of lightboxData">
+        <a class="gallery-item"
+        [href]="''+item.href+ ''"
+        (click) = "checkDefault()"
         data-responsive="{{item.href}}"
-        data-sub-html="Caption: {{item.title}}">
+        data-sub-html="Caption: {{item.title}}" style="width: 30%;">
+        <div class="lightbox-item" [ngStyle]="{background: 'linear-gradient(180deg, rgb(0 0 0 / 0%) 0%, rgb(0 0 0 / 60%) 80%), url('+item.href+')', 'background-size': 'cover', width: '100%', height: '250px',     'color': 'white',
+    'display': 'flex',
+    'align-items': 'flex-end',
+    'font-weight': 'bolder',
+    'padding-bottom': '20px',
+    'padding': '15px',
+    'border-radius': '20px',
+   'box-shadow': '2px 13px 17px 4px #d3d3d3'}" style="background-size: cover !important"
+        >
+          {{item.title}} <br> {{item.description}}
+        </div><!-- 
         <img class="img-responsive"
-          src="{{item.href}}" />
-          {{item.title}} | {{item.description}}
+          src="{{item.href}}" style="width: 150px; height:150px"/> -->
 
       </a>
+      </ng-container>
     </lightgallery>
-    <ng-container *ngIf="lightboxData.length === 0">
+    <!-- <ng-container *ngIf="lightboxData.length === 0">
         <div class="flex justify-center w-full">
             <label class="text-3xl py-40">
             No Images Selected
             </label>
         </div>
-    </ng-container>
-    <!-- <input class="form-control" type="file" #document
-    (change)="onFileChange($event)" accept="{{accepts}}" hidden> -->
+    </ng-container> -->
+     <input class="form-control" type="file" #document
+    (change)="onFileChange($event)" accept="{{accepts}}" hidden>
     <div class="flex w-full justify-center">
-     <button (click)="upload()"
+     <button (click)="document.click()"
           class="btn btn-success" style="position: fixed;/* top: 0; */right: 0;bottom: 0;border-radius: 100%;padding: 40px 25px;margin-bottom: 20px;margin-right: 20px;
     padding-bottom: 20px;    padding-top: 30px;">
           <i class="fa fa-camera" aria-hidden="true" style="    font-size: 40px;
@@ -41,5 +56,6 @@
           Upload
       </button>
     </div>
+    
 </div>
 

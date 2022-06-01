@@ -8,7 +8,7 @@
         <div class="d-flex flex-center flex-column flex-column-fluid p-10">
             <div class="login-form">
                <div>
-                <app-pi-forms *ngFor="let item of fields.definitions" [input]="item"></app-pi-forms>
+                <app-pi-forms class="form-control" *ngFor="let item of fields.definitions" [input]="item"></app-pi-forms>
                 <button type="submit" class="btn btn-primary d-block m-4" (click)="getFormData(fields.definitions)"  >Submit</button>
 
                 <!-- <app-pi-forms [input]="individual" [inputClass]="'form-control-info full-width rounded'"></app-pi-forms> -->

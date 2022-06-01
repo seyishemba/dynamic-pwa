@@ -12,6 +12,7 @@ export class PhotosComponent implements OnInit {
     lightBoxList: Array<LightboxData> = [];
     lightBoxList2: Array<LightboxData> = [];
     lightBoxList3: Array<LightboxData> = [];
+    lightBoxList4: Array<LightboxData> = [];
     constructor() { }
     lightboxData: any = {
         'id': '01',
@@ -42,6 +43,17 @@ export class PhotosComponent implements OnInit {
         'sequence': '0',
         'title': 'Image Category 3',
         'description': 'Category 3',
+        'tags': [{ 'tag': 'client', 'weight': '99' }, { 'tag': 'profile', 'weight': '99' }],
+        'metadata': { 'some_attribute': 'some value' },
+        'edit': false
+    };
+    lightboxData4: any = {
+        'id': '01',
+        'href': '',
+        'thumbnailHref': '',
+        'sequence': '0',
+        'title': 'Image Category 4',
+        'description': 'Category 4',
         'tags': [{ 'tag': 'client', 'weight': '99' }, { 'tag': 'profile', 'weight': '99' }],
         'metadata': { 'some_attribute': 'some value' },
         'edit': false

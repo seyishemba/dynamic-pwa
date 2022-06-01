@@ -4,6 +4,7 @@ import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { DomSanitizer } from '@angular/platform-browser';
 import { LightGallery } from 'lightgallery/lightgallery';
+import { demoData } from './demo';
 import { LightboxData } from './lightbox-data';
 
 @Component({
@@ -16,8 +17,9 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
      * handles both previous and current images loaded to light box
      */
     @Input() lightboxData: Array<LightboxData> = [];
+    demoData:any = demoData;
     files: Array<any> = [];
-
+    touched:any = false;
     /**
      * handles current image  being added to lightbox
      */
@@ -40,13 +42,55 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
     }
 
     settings = {
-        counter: false,
-        plugins: [lgZoom]
+        counter: true,
+        plugins: [lgZoom],
+        controls: true
     };
     onBeforeSlide = (detail: BeforeSlideDetail): void => {
         const { index, prevIndex } = detail;
         console.log(index, prevIndex);
     };
+    checkDefault(){
+        if(!this.touched){
+            alert('Cannot show demo images, Please upload new image')
+        }
+    }
+    defaultGallery(){
+        console.log(this.demoData)
+         const newImage : LightboxData = {
+                    href: this.demoData[0],
+                    thumbnailHref: this.demoData[0],
+                    sequence: '0',
+                    title: 'Default Title',
+                    description: 'Default Description',
+                    tags: [{ "tag" : "client", "weight" : "99"}],
+                    metadata: 'Default'
+                }
+                const newImage2 : LightboxData = {
+                    href: this.demoData[1],
+                    thumbnailHref: this.demoData[1],
+                    sequence: '0',
+                    title: 'Default Title',
+                    description: 'Default Description',
+                    tags: [{ "tag" : "client", "weight" : "99"}],
+                    metadata: 'Default'
+                }
+                const newImage3 : LightboxData = {
+                    href: this.demoData[2],
+                    thumbnailHref: this.demoData[2],
+                    sequence: '0',
+                    title: 'Default Title',
+                    description: 'Default Description',
+                    tags: [{ "tag" : "client", "weight" : "99"}],
+                    metadata: 'Default'
+                }
+                if(this.lightboxData.length == 0){
+               this.handleFileData(newImage);
+               this.handleFileData(newImage2);
+               this.handleFileData(newImage3);
+                }
+
+    }
 
   ngOnInit(): void {
   }
@@ -54,6 +98,8 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
   onInit =(detail): void => {
       console.log('check', detail);
       this.lightCallery = detail.instance;
+    this.defaultGallery()
+
   }
 
   safeUrl(file: any): any{
@@ -75,7 +121,9 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
     //     "metadata" : { "some_attribute" : "some value" }
     //   }
     console.log(file)
-    this.lightboxData.push(file);
+    
+        this.lightboxData.push(file);
+
     // this.lightboxData.thumbnailHref = files[0]
     console.log(this.lightboxData)
   }
@@ -132,6 +180,13 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
                     description: this.currentImage.description,
                     tags: this.currentImage.tags,
                     metadata: this.currentImage.metadata
+                }  
+                if(!this.touched){
+                    this.lightboxData.pop();
+                    this.lightboxData.pop();
+                    this.lightboxData.pop();
+                }else{
+                this.touched = true;
                 }
 
                this.handleFileData(newImage);

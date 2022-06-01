@@ -1,6 +1,7 @@
 import { LightboxTag } from './lightbox-tag';
 export interface LightboxData {
-    href: string;
+    href?: string;
+    src?: string;
     thumbnailHref: string;
     sequence?: string;
     title?: string;

@@ -14,58 +14,67 @@ export class AppFormsComponent implements OnInit {
         id: '1',
         title: 'Sample form',
         definitions: [
-            {
-                value: 'Branch A',
-                required: true,
-                label: 'Branch',
-                key: 1,
-                type: 'enum',
-                placeholder: 'Select branch',
-                enumValues: [
-                    'Branch A',
-                    'Branch B'
-                ]
-            },
-            {
-                key: 2,
-                value: false,
-                required: false,
-                label: `Are you not a robot?`,
-                type: 'bool'
-            },
-            {
+            // {
+            //     value: 'Branch A',
+            //     required: true,
+            //     label: 'Branch',
+            //     key: 1,
+            //     type: 'enum',
+            //     placeholder: 'Select branch',
+            //     enumValues: [
+            //         'Branch A',
+            //         'Branch B'
+            //     ]
+            // },
+            // {
+            //     key: 2,
+            //     value: false,
+            //     required: false,
+            //     label: `Are you not a robot?`,
+            //     type: 'bool'
+            // },
+            // {
+            //     key: 'email',
+            //     value: 'mac@dmg.com',
+            //     required: true,
+            //     label: 'Email',
+            //     placeholder: 'Enter email',
+            //     type: 'string'
+            // },
+            // {
+            //     key: 4,
+            //     required: true,
+            //     label: 'Age',
+            //     placeholder: 'Enter Age',
+            //     type: 'int'
+            // },
+            // {
+            //     key: 'images',
+            //     value: {
+            //         "id": "01",
+            //         "href": "",
+            //         "thumbnailHref" : "",
+            //         "sequence" : "0",
+            //         "title" : "Happy Image",
+            //         "description" : "This is a happy image",
+            //         "tags" : [{ "tag" : "client", "weight" : "99"}, { "tag" : "profile", "weight" : "99"}],
+            //         "metadata" : { "some_attribute" : "some value" }
+            //       },
+            //     required: true,
+            //     label: 'Select Images',
+            //     placeholder: 'Select Images',
+            //     type: 'lightbox',
+            //     lightboxData: []
+            // }
+             {
                 key: 'email',
                 value: 'mac@dmg.com',
                 required: true,
                 label: 'Email',
                 placeholder: 'Enter email',
                 type: 'string'
-            },
-            {
-                key: 4,
-                required: true,
-                label: 'Age',
-                placeholder: 'Enter Age',
-                type: 'int'
-            },
-            {
-                key: 'images',
-                value: {
-                    "id": "01",
-                    "href": "",
-                    "thumbnailHref" : "",
-                    "sequence" : "0",
-                    "title" : "Happy Image",
-                    "description" : "This is a happy image",
-                    "tags" : [{ "tag" : "client", "weight" : "99"}, { "tag" : "profile", "weight" : "99"}],
-                    "metadata" : { "some_attribute" : "some value" }
-                  },
-                required: true,
-                label: 'Select Images',
-                placeholder: 'Select Images',
-                type: 'lightbox',
-                lightboxData: []
             }
+
         ]
     };
 
