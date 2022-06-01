@@ -1,7 +1,7 @@
 ﻿import { AppFormsModule } from './../app-forms/app-forms.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ChatSignalrService } from '@app/shared/layout/chat/chat-signalr.service';
 import { LinkAccountModalComponent } from '@app/shared/layout/link-account-modal.component';
@@ -108,7 +108,12 @@ import { NotesComponent } from './components/tabs/notes/notes.component';
 import { PhotosComponent } from './components/tabs/photos/photos.component';
 import { MdbTabsModule } from 'mdb-angular-ui-kit/tabs';
 import { LightboxComponent } from 'app-forms/lightbox/lightbox.component';
-
+import { ClockInComponent } from './components/clock-in/clock-in.component';
+import { StartTripComponent } from './components/start-trip/start-trip.component';
+import { MenuComponent } from './components/common/menu/menu.component';
+import { RefuelComponent } from './components/refuel/refuel.component';
+import { UploadMediaComponent } from './upload-media/upload-media.component';;
+import { AlertComponent } from './components/common/alert/alert.component'
 @NgModule({
     declarations: [
         AppComponent,
@@ -174,8 +179,13 @@ import { LightboxComponent } from 'app-forms/lightbox/lightbox.component';
         ViewJobComponent,
         InspectionComponent,
         NotesComponent,
-        PhotosComponent
-        ],
+        PhotosComponent,
+        ClockInComponent,
+        StartTripComponent ,
+        MenuComponent ,
+        RefuelComponent ,
+        UploadMediaComponent ,
+        AlertComponent    ],
     imports: [
         CommonModule,
         FormsModule,
@@ -206,8 +216,8 @@ import { LightboxComponent } from 'app-forms/lightbox/lightbox.component';
         LightgalleryModule,
         BrowserModule,
         MdbTabsModule,
-        AppFormsModule
-
+        AppFormsModule,
+        ReactiveFormsModule
     ],
     providers: [
         ImpersonationService,

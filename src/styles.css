@@ -163,5 +163,13 @@ bs-days-calendar-view {
     display: inline-block;
     border-radius: 4px 0 0 4px;
 }
+
+.bg-close-light{
+    background-color: #DAB2B3 !important;
+}
+
+.bg-blue-light {
+    background-color: #004263 !important;
+}
 @import '~lightgallery/scss/lightgallery';
 @import "~mdb-angular-ui-kit/assets/scss/mdb.scss";

@@ -1,0 +1,22 @@
+<div class="right-0 bottom-0 left-0 top-0 p-4 fixed h-screen backdrop-blur-sm bg-black/50 z-50">
+    <div class="flex flex-wrap content-center h-full w-full">
+        <div class="flex justify-center w-full">
+            <div class="w-96 rounded-lg bg-close-light border shadow-xl">
+                <div class="flex justify-between p-2">
+                    <div></div>
+                    <i (click)="closeAlert()" class="fa fa-times text-lg text-black cursor-pointer"></i>
+                </div>
+                <div class="p-2 w-full space-y-8">
+                    <h1 class="text-base text-black text-center font-bold block">{{message}}</h1>
+                    <div class="flex flex-wrap content-center h-full w-full">
+                        <div class="flex justify-center w-full">
+                            <button (click)="closeAlert()"
+                                class="btn bg-black font-weight-bolder text-white px-8 py-4 ">{{buttonText ??
+                                'Close'}}</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

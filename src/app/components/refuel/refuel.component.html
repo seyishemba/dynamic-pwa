@@ -1,0 +1,46 @@
+<label class="text-2xl font-bold">Refuel.</label>
+<div class="w-full p-5">
+    <form [formGroup]="form" class="space-y-4">
+        <div>
+            <label>Filling Station</label>
+            <input class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="fillingStation">
+        </div>
+
+        <div>
+            <label>Odometer</label>
+            <input class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="odometer">
+        </div>
+
+        <div>
+            <label>Grade</label>
+            <input class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="grade">
+        </div>
+
+        <div>
+            <label>Gallons</label>
+            <input class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="gallons">
+        </div>
+
+        <div>
+            <label>Total Paid</label>
+            <input type="number" class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="totalPaid">
+        </div>
+
+        <div>
+            <label>Paid With</label>
+            <input type="number" class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="paidWith">
+        </div>
+    </form>
+    <div class="flex justify-between mt-10">
+        <button (click)="closeModal()"
+            class="btn w-100 btn-success font-weight-bolder font-size-h6 px-8 py-4 my-3 me-3">Save</button>
+        <button (click)="closeModal()"
+            class="btn w-100 bg-close-light font-weight-bolder font-size-h6 px-8 py-4 my-3 me-3">Close</button>
+    </div>
+</div>

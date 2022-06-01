@@ -1,0 +1,21 @@
+<label class="text-2xl font-bold">Start Trip.</label>
+<div class="w-full p-5">
+    <form [formGroup]="form" class="space-y-4">
+        <div>
+            <label>Start Drive Time</label>
+            <input type="time" class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="startTripTime">
+        </div>
+        <div *ngIf="tripStatus" >
+            <label>End Drive Time</label>
+            <input type="time" class="form-control form-control-solid h-auto py-3 px-6 rounded-lg font-size-h6"
+                formControlName="endTripTime">
+        </div>
+    </form>
+    <div class="flex justify-between">
+        <button (click)="saveClockIn()"
+            class="btn w-100 btn-success font-weight-bolder font-size-h6 px-8 py-4 my-3 me-3">Save</button>
+        <button (click)="closeModal()"
+            class="btn w-100 bg-close-light font-weight-bolder font-size-h6 px-8 py-4 my-3 me-3">Close</button>
+    </div>
+</div>

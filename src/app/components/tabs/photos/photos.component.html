@@ -38,7 +38,7 @@
  		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
  		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData.tags[1].tag">
  		</ng-container>
- 		<app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData"></app-lightbox>
+ 		<app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData" (uploadImage)="uploadModal()"></app-lightbox>
 
  	</div>
  </section>
@@ -85,7 +85,7 @@
  		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData2.description">
  		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData2.tags[1].tag">
  		</ng-container>
- 		<app-lightbox [lightboxData]="lightBoxList2" [currentImage]="lightboxData2"></app-lightbox>
+ 		<app-lightbox [lightboxData]="lightBoxList2" [currentImage]="lightboxData2" (uploadImage)="uploadModal()"></app-lightbox>
 
  	</div>
  </section>
@@ -141,5 +141,19 @@
 
   </mdb-tab>
 
-  
+
 </mdb-tabs>
+
+<ng-container *ngIf="showUploadMedia">
+    <div class="fixed right-0 bottom-0 left-0 top-0 backdrop-blur-sm bg-black/50 z-50">
+        <div class="flex flex-wrap content-center h-full w-full">
+            <div class="flex justify-center w-full px-4">
+                <div class="w-6/12 rounded-lg bg-white border shadow-xl">
+                    <div class="p-4">
+                        <app-upload-media (onCloseModal)="uploadModal()" ></app-upload-media>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

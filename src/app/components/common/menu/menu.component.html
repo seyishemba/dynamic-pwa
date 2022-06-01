@@ -1,0 +1,44 @@
+<div class="fixed h-screen backdrop-blur-sm bg-black/50 z-50" [class.right-0]="!collapse" [class.bottom-0]="!collapse"
+    [class.top-0]="!collapse" [class.left-0]="!collapse">
+    <div class="h-full transition ease-in-out duration-500 bg-white z-50" [class.transform]="collapse"
+        [class.-translate-x-full]="collapse" [class.w-0]="collapse" [class.w-96]="!collapse">
+        <div class="flex flex-col h-full">
+            <div class="grid grid-cols-1 h-full w-full rounded-lg overflow-hidden relative">
+                <div class="flex flex-col h-full space-y-2">
+                    <div class="h-24 w-full flex px-6 pt-6">
+                        <div class="flex flex-wrap content-center h-full w-full">
+                            <div class="flex justify-between w-full">
+                                <h1 class="block font-bold text-3xl text-black">Menu.</h1>
+                                <i (click)="collapseMenu()" class="fa fa-times text-3xl text-black cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grow h-full overflow-auto py-8">
+                        <div class="space-y-1 text-base divide-y border-y">
+                            <ng-container *ngFor="let menu of menu; let i = index">
+                                <ng-container *ngIf="!menu.isRoute">
+                                    <div (click)="menu.modal()" class="flex cursor-pointer w-full rounded-lg py-3 px-6">
+                                        <label class="text-xl cursor-pointer text-black">{{menu.title}}</label>
+                                    </div>
+                                </ng-container>
+                                <ng-container *ngIf="menu.isRoute">
+                                    <div [routerLink]="menu.path"
+                                        class="flex cursor-pointer w-full rounded-lg py-3 px-6">
+                                        <label class="text-xl cursor-pointer text-black">{{menu.title}}</label>
+                                    </div>
+                                </ng-container>
+                            </ng-container>
+                        </div>
+                    </div>
+                    <div class="h-auto flex w-full bg-close-light">
+                        <div class="w-full px-6 py-2">
+                            <div class="flex cursor-pointer w-full rounded-lg p-3" routerLink="/login">
+                                <label class="text-xl font-bold cursor-pointer text-black">Logout</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

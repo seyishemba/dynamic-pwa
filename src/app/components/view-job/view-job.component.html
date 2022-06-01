@@ -1,51 +1,59 @@
 <app-header></app-header>
-    <section>
+<section>
+    <div class="container">
         <div class="row p-5">
-          <div class="col-3 p-4">
-            <input type="text" placeholder="Search..." class="rounded-[15px] p-5 w-full shadow-md">
-          </div>
-          <!-- ... -->
-          <div class="col-3 p-4">
-            <button class="shadow-md text-white p-5 rounded w-full text-center bg-[#16B44C]"> Complete </button>
-          </div>
-          <div class="col-3 p-4">
-            <button class="shadow-md text-white p-5 rounded w-full text-center bg-[#004263]"> Update </button>
-          </div>
-          <div class="col-3 p-4">
-            <button class="shadow-md text-black p-5 rounded w-full text-center bg-[#DAB2B3]"> Close </button>
-          </div>
+            <div class="col-3 p-4">
+                <input type="text" placeholder="Search..." class="rounded-[15px] p-5 w-full shadow-md">
+            </div>
+            <!-- ... -->
+            <div class="col-3 p-4">
+                <button class="shadow-md text-white p-5 rounded w-full text-center bg-[#16B44C]"> Complete </button>
+            </div>
+            <div class="col-3 p-4">
+                <button class="shadow-md text-white p-5 rounded w-full text-center bg-blue-light"> Update </button>
+            </div>
+            <div class="col-3 p-4">
+                <button class="shadow-md text-black p-5 rounded w-full text-center bg-close-light"> Close </button>
+            </div>
 
-          </div>
-    </section>
+        </div>
+    </div>
+</section>
 
-    <section>
-        <div class="p-5">
-            <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[90%] mt-[-25px] z-50 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]"> 10 </button>
-            <div class="rounded-[20px] shadow-md bg-[#fff] border-[2px] border-[#C8C8C8]/[.5]">
-                <div class="row p-6 pb-0">
-                    <div class="col-2 border-r-[2px] border-[#DEDEDE]">
-                        <div class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100%] h-[80%] border-[#004263] border-4"> 
-                        </div>
-                    </div>
-                    <div class="col-7">
-                        <div class="pl-[20px]">
-                            <h1 class="font-extrabold   ">Kennen Palm</h1>
-                            <div class="italic mt-3 mb-3">
-                            <h5 class="font-medium">
-                                121 Happy Way,</h5>
-                                <h5 class="font-medium">Woodstock, GA 12111 </h5>
-                                <h5 class="font-medium">615-419-6646</h5>
-                                <h5 class="font-medium">kenn@kennpalm.com
-                            </h5>
-                             </div>
-                        </div>
-                    </div>
-                    <div class="col-3 text-right">
-                        <p class="text-[#004263] font-medium text-2xl ">Reports <i class="fas fa-file text-[#00446178] text-[20px] ml-[20px]"></i> </p>
-                        <p><i class="fas fa-chevron-right text-[#8ea6b4] text-7xl mt-6"></i></p>
+<section>
+    <div class="p-5 w-full position-relative">
+        <button
+            class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full top-0 right-2 z-10 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]">
+            10 </button>
+
+        <!-- <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[90%] mt-[-25px] z-50 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]"> 10 </button> -->
+        <div class="rounded-[20px] shadow-md bg-[#fff] border-[2px] border-[#C8C8C8]/[.5]">
+            <div class="row p-6 pb-0">
+                <div class="col-2 border-r-[2px] border-[#DEDEDE]">
+                    <div
+                        class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100%] h-[80%] border-[#004263] border-4">
                     </div>
                 </div>
-                <div class="p-4 bg-[#EEDDB2] rounded-br-[20px] rounded-bl-[20px]">
+                <div class="col-7">
+                    <div class="pl-[20px]">
+                        <h1 class="font-extrabold">Kennen Palm</h1>
+                        <div class="italic mt-3 mb-3">
+                            <h5 class="font-medium">
+                                121 Happy Way,</h5>
+                            <h5 class="font-medium">Woodstock, GA 12111 </h5>
+                            <h5 class="font-medium">615-419-6646</h5>
+                            <h5 class="font-medium">kenn@kennpalm.com
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 text-right">
+                    <p class="text-[#004263] font-medium text-2xl ">Reports <i
+                            class="fas fa-file text-[#00446178] text-[20px] ml-[20px]"></i> </p>
+                    <p><i class="fas fa-chevron-right text-[#8ea6b4] text-7xl mt-6"></i></p>
+                </div>
+            </div>
+            <div class="p-4 bg-[#EEDDB2] rounded-br-[20px] rounded-bl-[20px]">
                 <span>
                     <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
                 </span>
@@ -53,39 +61,82 @@
                     +5 More
                 </span>
             </div>
-            </div>
-            
         </div>
-    </section>
-    <section>
+
+    </div>
+</section>
+<section>
+    <div class="container">
         <div class="row p-40 py-0">
-            <!-- <div class="col-6">
-                <button class="shadow-md text-white p-5 rounded w-full text-center bg-[#004263]">Start Drive</button>
+            <div class="col-6">
+                <button (click)="tripModal()" class="shadow-md text-white p-5 rounded w-full text-center bg-blue-light">
+                    {{tripStatus ? 'Trip In Session' : 'Start Drive'}}
+                </button>
             </div>
             <div class="col-6">
-                <button class="shadow-md text-white p-5 rounded w-full text-center bg-[#004263]">Clock In</button>
-            </div> -->
-            <div class="col-6">
-                <button class="shadow-md text-black p-5 rounded w-full text-center btn-default">Start Drive</button>
-            </div>
-            <div class="col-6">
-                <button class="shadow-md text-black p-5 rounded w-full text-center btn-default">Clock In</button>
+                <button (click)="clockModal()" class="shadow-md text-white p-5 rounded w-full text-center bg-blue-light">
+                    {{clockInStatus ? 'Clock Out' : 'Clock In'}}
+                </button>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="mt-10 container col-11">
-        <mdb-tabs [fill]="true">
-          <mdb-tab title="Inspection">
-              <app-inspection></app-inspection>
-          </mdb-tab>
-          <mdb-tab title="Notes">
-              <app-notes></app-notes>
-          </mdb-tab>
-          <mdb-tab title="Photos">
-              <app-photos></app-photos>
-          </mdb-tab>
-        </mdb-tabs>
+<section class="mt-10 container col-11">
+    <mdb-tabs [fill]="true">
+        <mdb-tab title="Inspection">
+            <app-inspection></app-inspection>
+        </mdb-tab>
+        <mdb-tab title="Notes">
+            <app-notes></app-notes>
+        </mdb-tab>
+        <mdb-tab title="Photos">
+            <app-photos></app-photos>
+        </mdb-tab>
+    </mdb-tabs>
 
-        
-    </section>
+
+</section>
+
+<!-- workarea -->
+<ng-container *ngIf="showModalClockIn">
+    <div class="fixed right-0 bottom-0 left-0 top-0 backdrop-blur-sm bg-black/50 z-50">
+        <div class="flex flex-wrap content-center h-full w-full">
+            <div class="flex justify-center w-full px-4">
+                <div class="w-6/12 rounded-lg bg-white border shadow-xl">
+                    <div class="p-4">
+                        <app-clock-in (onCloseModal)="clockModal($event)"></app-clock-in>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="showModalTrip">
+    <div class="fixed right-0 bottom-0 left-0 top-0 backdrop-blur-sm bg-black/50 z-50">
+        <div class="flex flex-wrap content-center h-full w-full">
+            <div class="flex justify-center w-full px-4">
+                <div class="w-6/12 rounded-lg bg-white border shadow-xl">
+                    <div class="p-4">
+                        <app-start-trip (onCloseModal)="tripModal($event)" ></app-start-trip>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
+
+<ng-container *ngIf="showModalFuel">
+    <div class="fixed right-0 bottom-0 left-0 top-0 backdrop-blur-sm bg-black/50 z-50">
+        <div class="flex flex-wrap content-center h-full w-full">
+            <div class="flex justify-center w-full px-4">
+                <div class="w-6/12 rounded-lg bg-white border shadow-xl">
+                    <div class="p-4">
+                        <app-refuel (onCloseModal)="fuelModal()"></app-refuel>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>

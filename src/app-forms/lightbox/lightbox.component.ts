@@ -1,5 +1,5 @@
 import { LightboxService } from './lightbox.service';
-import { Component, OnInit, AfterViewChecked, Input } from '@angular/core';
+import { Component, OnInit, AfterViewChecked, Input, Output, EventEmitter } from '@angular/core';
 import lgZoom from 'lightgallery/plugins/zoom';
 import { BeforeSlideDetail } from 'lightgallery/lg-events';
 import { DomSanitizer } from '@angular/platform-browser';
@@ -31,6 +31,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
      */
     private refresh = false;
     accepts = 'image/png, image/jpeg, image/jpg';
+    @Output() uploadImage = new EventEmitter<boolean>();
   constructor(public sanitize: DomSanitizer, private service: LightboxService) { }
     ngAfterViewChecked(): void {
         if (this.refresh) {
@@ -155,6 +156,9 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
       }
   }
 
+  upload() {
+      this.uploadImage.emit(true);
+  }
 }
 
 
