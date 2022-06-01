@@ -140,7 +140,47 @@
  </section>
 
   </mdb-tab>
+  <mdb-tab title="Hover ({{ lightBoxList3.length }})">
+    <section>
+        <div class="lightbox-album p-5">
+            <div class="row">
+                <div class="col-6">
+                    <strong>Selected Album:</strong>
+                </div>
+                <div class="col-6">
+                    Hover
+                </div>
+                <div class="col-6">
+                    <strong>Title:</strong>
+                </div>
+                <div class="col-6">
+                    {{lightboxData3.title}}
+                </div>
+                <div class="col-6">
+                    <strong>Description:</strong>
+                </div>
+                <div class="col-6">
+                    {{lightboxData3.description}}
+                </div>
+                <div class="col-6">
+                    <button class="btn btn-primary btn-xs " *ngIf="!lightboxData3.edit" (click)="lightboxData3.edit = true">Edit Information</button>
+                    <button class="btn btn-primary btn-xs " *ngIf="lightboxData3.edit" (click)="lightboxData3.edit = false">Done</button>
+                </div>
 
+            </div>
+        </div>
+         <div class="lightbox-upload-form p-10">
+            <ng-container  *ngIf="lightboxData3.edit">
+            <p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Hover Album</p>
+            <input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData3.title">
+            <input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData3.description">
+            <input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData3.tags[1].tag">
+            </ng-container>
+            <app-lightbox [lightboxData]="lightBoxList3" [currentImage]="lightboxData3"></app-lightbox>
+
+        </div> -->
+    </section>
+     </mdb-tab>
 
 </mdb-tabs>
 
