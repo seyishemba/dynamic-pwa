@@ -112,8 +112,8 @@ import { ClockInComponent } from './components/clock-in/clock-in.component';
 import { StartTripComponent } from './components/start-trip/start-trip.component';
 import { MenuComponent } from './components/common/menu/menu.component';
 import { RefuelComponent } from './components/refuel/refuel.component';
-import { UploadMediaComponent } from './upload-media/upload-media.component';;
-import { AlertComponent } from './components/common/alert/alert.component'
+import { UploadMediaComponent } from './upload-media/upload-media.component';
+import { AlertComponent } from './components/common/alert/alert.component';
 @NgModule({
     declarations: [
         AppComponent,

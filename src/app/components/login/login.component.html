@@ -11,7 +11,10 @@
     <div class="">
       <input type="text" class="form-control rounded-[15px] mt-5" placeholder="Username:">
       <input type="password" class="form-control rounded-[15px] mt-5" placeholder="Password:">
-      <button class="text-left btn mt-10 btn-primary w-full d-inline-flex align-items-center justify-between  " routerLink="/component-dashboard">Login <i class="fas fa-arrow-right"></i></button>
+      <button class="text-left btn mt-10 btn-primary w-full d-inline-flex align-items-center justify-between" (click)="get()">Test Get <i class="fas fa-arrow-right"></i></button>
+      <button class="text-left btn mt-10 btn-primary w-full d-inline-flex align-items-center justify-between" (click)="post()">Test Post <i class="fas fa-arrow-right"></i></button>
+
+      <!-- routerLink="/component-dashboard" -->
     </div>
    </div>
  </div>
