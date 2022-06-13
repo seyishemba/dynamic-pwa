@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AppService } from '@app/app.service';
 import { environment } from 'environments/environment';
+import { InspectionsService } from 'app/services/inspections/inspections.service';
+import { Injectable } from '@angular/core';
 
 @Component({
   selector: 'app-list-jobs',
@@ -10,15 +12,21 @@ import { environment } from 'environments/environment';
 })
 export class ListJobsComponent implements OnInit {
   env:any = environment;
-  amount:any = [1,2,3,4,5,6,7,8,9,10];
+  jobs:any;
+
   constructor(private router: Router,
-    private appService: AppService) { }
+    private appService: AppService, private Inspections: InspectionsService) { }
 
   ngOnInit(): void {
+    this.listJobs()
   }
 
-  viewJob(id) {
-    this.appService.setStorageItem(this.appService.jobKey, id);
-      this.router.navigate(['/component-dashboard/view-job']);
+  listJobs(){
+      this.Inspections.GetAll(["", '']).subscribe(data => {
+            this.jobs = data;
+          }, err => {
+            console.log(err, 'err')
+          });
   }
+
 }

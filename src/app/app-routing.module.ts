@@ -45,7 +45,7 @@ import { ViewJobComponent } from './components/view-job/view-job.component'
             { path: '', redirectTo: '/login', pathMatch: 'full' },
             { path: 'login', component: LoginComponent },
             { path: 'component-dashboard', component: DashboardComponent },
-            { path: 'component-dashboard/view-job', component: ViewJobComponent },
+            { path: 'component-dashboard/view-job/:id', component: ViewJobComponent },
 
         ]),
     ],

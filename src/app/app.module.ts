@@ -1,6 +1,11 @@
 ﻿import { AppFormsModule } from './../app-forms/app-forms.module';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AppHttpInterceptor } from './http-interceptor';
+import { Api } from './api';
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
 import { ChatSignalrService } from '@app/shared/layout/chat/chat-signalr.service';
@@ -220,6 +225,8 @@ import { AlertComponent } from './components/common/alert/alert.component';
         ReactiveFormsModule
     ],
     providers: [
+
+        Api,{ provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true },
         ImpersonationService,
         LinkedAccountService,
         UserNotificationHelper,

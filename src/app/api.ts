@@ -3,6 +3,7 @@ import { Inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { BASE_URL } from "./values";
+import { Router, ActivatedRoute } from '@angular/router';
 
 
 @Injectable({
@@ -10,7 +11,8 @@ import { BASE_URL } from "./values";
 })
 export class Api {
 
-  constructor(private http: HttpClient, @Inject(BASE_URL) private baseUrl: string) {
+  constructor(private http: HttpClient, @Inject(BASE_URL) private baseUrl: string, public router: Router,
+    ) {
 
   }
 
@@ -25,10 +27,23 @@ export class Api {
 
   }
 
+
+  doGet(url, paramsData):Observable<any> {
+    let params = new Map<string, any>([paramsData]);
+    return this.get(url, params);
+  }
+
   post<T>(url: string, data?: T): Observable<T> {
     let _url = this.getUrl(url);
-    let payload = data ? JSON.stringify(data) : undefined;
+    //let payload = data ? JSON.stringify(data) : undefined;
+    let payload = data ;
     return this.http.post<T>(_url, payload);
+  }
+    doPost(url, data):Observable<any> {
+    return this.post(url, data)
+      .pipe(map((result: any) => {
+        return result;
+      }))
   }
 
   put<T>(url: string, data: T): Observable<T> {
@@ -56,5 +71,21 @@ export class Api {
 
   private getUrl(url: string) {
     return `${this.baseUrl}/${url}`;
+  }
+
+  getRoute(position:any=null) {
+    if(position == null){
+      return (this.router.url.split("/")); // array of states      
+    }else{
+      var routes = this.router.url.split("/")
+      return (routes[position]);       
+    }
+  }
+
+  ProcessApiResponse(response, next){
+    if(response.result){
+    }else{
+      alert('Error')
+    }
   }
 }

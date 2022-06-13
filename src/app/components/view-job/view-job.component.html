@@ -24,9 +24,8 @@
     <div class="p-5 w-full position-relative">
         <button
             class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full top-0 right-2 z-10 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]">
-            10 </button>
+            0 </button>
 
-        <!-- <button class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full ml-[90%] mt-[-25px] z-50 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]"> 10 </button> -->
         <div class="rounded-[20px] shadow-md bg-[#fff] border-[2px] border-[#C8C8C8]/[.5]">
             <div class="row p-6 pb-0">
                 <div class="col-2 border-r-[2px] border-[#DEDEDE]">
@@ -36,13 +35,13 @@
                 </div>
                 <div class="col-7">
                     <div class="pl-[20px]">
-                        <h1 class="font-extrabold">Kennen Palm</h1>
+                        <h1 class="font-extrabold   ">{{ job?.inspection.title }}</h1>
                         <div class="italic mt-3 mb-3">
                             <h5 class="font-medium">
-                                121 Happy Way,</h5>
-                            <h5 class="font-medium">Woodstock, GA 12111 </h5>
-                            <h5 class="font-medium">615-419-6646</h5>
-                            <h5 class="font-medium">kenn@kennpalm.com
+                                {{ job?.inspection.address}} <br> {{ job?.inspection.address2 }}</h5>
+                            <h5 class="font-medium">  {{ job?.inspection.city }} {{ job?.inspection.zip }} {{ job?.inspection.state }} </h5>
+                            <h5 class="font-medium"> {{ job?.inspection.phone }} </h5>
+                            <h5 class="font-medium">  {{ job?.inspection.email }} 
                             </h5>
                         </div>
                     </div>
@@ -55,10 +54,10 @@
             </div>
             <div class="p-4 bg-[#EEDDB2] rounded-br-[20px] rounded-bl-[20px]">
                 <span>
-                    <i class="fas fa-comment-alt"></i> Note: Call Client before arriving!
+                    <i class="fas fa-comment-alt"></i> Note: ...
                 </span>
                 <span class="border-b-[1.5px] border-black/[.40] float-right">
-                    +5 More
+                    ...
                 </span>
             </div>
         </div>

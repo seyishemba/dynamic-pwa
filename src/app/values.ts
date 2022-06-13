@@ -2,10 +2,10 @@ import { InjectionToken } from "@angular/core";
 
 const server:any = {
   "local" : {
-    "url": "http://localhost:22742",
+    "url": "http://api.sentinel.care:44302/api",
   },
   "remote" : {
-    "url" : "https://live-api.manduu.work/"
+    "url" : "http://api.sentinel.care:44302/api"
   }
 } 
 

@@ -1,7 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { AppService } from '@app/app.service';
 import { environment } from 'environments/environment';
-
+import { InspectionsService } from 'app/services/inspections/inspections.service';
+import { Api } from 'app/api';
 
 @Component({
     selector: 'app-view-job',
@@ -15,7 +16,9 @@ export class ViewJobComponent implements OnInit, OnDestroy {
     showModalFuel = false;
     tripStatus = '';
     clockInStatus = '';
-    constructor(private appService: AppService) {
+    job:any;
+    constructor(private Api: Api, private appService: AppService,  private Inspections: InspectionsService) {
+        this.GetInspectionForView()
         appService.clockSubject.subscribe((value) => {
             if (value) {
                 this.clockModal();
@@ -42,6 +45,17 @@ export class ViewJobComponent implements OnInit, OnDestroy {
         this.clockInStatus = this.appService.getStorageItem(this.appService.key)?.clockIn;
         this.tripStatus = this.appService.getStorageItem(this.appService.tripKey)?.startTripTime;
     }
+
+    GetInspectionForView(){
+        const InspectionId = this.Api.getRoute(3);
+
+        this.Inspections.GetInspectionForView(["id", InspectionId]).subscribe(data => {
+            console.log(data)
+            this.job = data;
+          }, err => {
+        });
+    }
+
 
     clockModal(event?: any) {
         if (event?.save) {
