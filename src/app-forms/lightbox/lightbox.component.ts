@@ -48,7 +48,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
     };
     onBeforeSlide = (detail: BeforeSlideDetail): void => {
         const { index, prevIndex } = detail;
-        console.log(index, prevIndex);
+        //console.log(index, prevIndex);
     };
     checkDefault(){
         if(!this.touched){
@@ -56,7 +56,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
         }
     }
     defaultGallery(){
-        console.log(this.demoData)
+        //console.log(this.demoData)
          const newImage : LightboxData = {
                     href: this.demoData[0],
                     thumbnailHref: this.demoData[0],
@@ -96,7 +96,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
   }
 
   onInit =(detail): void => {
-      console.log('check', detail);
+      //console.log('check', detail);
       this.lightCallery = detail.instance;
     this.defaultGallery()
 
@@ -120,12 +120,12 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
     //     "tags" : [{ "tag" : "client", "weight" : "99"}, { "tag" : "profile", "weight" : "99"}],
     //     "metadata" : { "some_attribute" : "some value" }
     //   }
-    console.log(file)
+    //console.log(file)
     
         this.lightboxData.push(file);
 
     // this.lightboxData.thumbnailHref = files[0]
-    console.log(this.lightboxData)
+    //console.log(this.lightboxData)
   }
   onFileChange(file: any): void {
       /**
@@ -170,7 +170,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
                 /**
                  * adds the base64 image to the file list for uploading
                  */
-            console.log(event.target.result)
+            //console.log(event.target.result)
 
                 const newImage : LightboxData = {
                     href: event.target.result,
@@ -196,7 +196,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
              * reads the image and converts to base64
              */
             reader.readAsDataURL(file.target.files[0]);
-            console.log(reader.readAsDataURL(file.target.files[0]))
+            //console.log(reader.readAsDataURL(file.target.files[0]))
         }
          /**
           * upload files to the server

@@ -1,0 +1,6 @@
+{
+	"appId": "com.sentinel.app",
+	"appName": "sentinel-inspector",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}

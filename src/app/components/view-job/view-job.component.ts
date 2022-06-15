@@ -17,6 +17,7 @@ export class ViewJobComponent implements OnInit, OnDestroy {
     tripStatus = '';
     clockInStatus = '';
     job:any;
+    jobFormId:any;
     constructor(private Api: Api, private appService: AppService,  private Inspections: InspectionsService) {
         this.GetInspectionForView()
         appService.clockSubject.subscribe((value) => {
@@ -45,7 +46,7 @@ export class ViewJobComponent implements OnInit, OnDestroy {
         this.clockInStatus = this.appService.getStorageItem(this.appService.key)?.clockIn;
         this.tripStatus = this.appService.getStorageItem(this.appService.tripKey)?.startTripTime;
     }
-
+    
     GetInspectionForView(){
         const InspectionId = this.Api.getRoute(3);
 
@@ -56,6 +57,10 @@ export class ViewJobComponent implements OnInit, OnDestroy {
         });
     }
 
+    ngOnChanges() {
+        this.jobFormId = this.job?.inspection.formId
+        console.log(this.jobFormId)
+    }
 
     clockModal(event?: any) {
         if (event?.save) {

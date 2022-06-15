@@ -2,17 +2,14 @@
 <div class="p-5 bg-[#F6E9C7] mb-8 rounded">
 	Swipe note to the left to delete and tap to edit.
 </div>
-<textarea class="form-control shadow-md mb-5 rounded">
-2021-05-08 15:15 KMP
-Here is a note that was added to the opportunity
+<textarea class="form-control shadow-md mb-5 rounded" *ngFor="let note of notes">
+{{ note.data.time }}
+{{ note.data.data }}
 </textarea>
 
-<textarea class="form-control shadow-md mb-5 rounded">
-2021-05-08 15:15 KMP
-Here is a note that was added to the opportunity
-</textarea>
 
 <textarea class="form-control shadow-md mb-5 rounded">
 	Tap to edit
 </textarea>
+<button class="btn btn-primary">Add</button>
 </div>

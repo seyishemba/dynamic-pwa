@@ -1,100 +1,11 @@
- <mdb-tabs [fill]="false" class="inner-tabs">
-  <mdb-tab title="Project ({{ lightBoxList?.length }})">
+<div class="p-8">
+<div class="p-5 bg-[#F6E9C7] mb-8 rounded">
+    Photos are synced automatically
+</div>
 
+<div class="form-control shadow-md mb-5 rounded bg-black text-white h-[250px]">
+    Webcam
+</div>
 
- <section>
-<!--  	<div class="lightbox-album p-5">
- 		<div class="row">
- 			<div class="col-6">
- 				<strong>Selected Album:</strong>
- 			</div>
- 			<div class="col-6">
- 				Project
- 			</div>
- 			<div class="col-6">
- 				<strong>Title:</strong>
- 			</div>
- 			<div class="col-6">
- 				{{lightboxData.title}}
- 			</div>
- 			<div class="col-6">
- 				<strong>Description:</strong>
- 			</div>
- 			<div class="col-6">
- 				{{lightboxData.description}}
- 			</div>
- 			<div class="col-6">
- 				<button class="btn btn-primary btn-xs " *ngIf="!lightboxData.edit" (click)="lightboxData.edit = true">Edit Information</button>
- 				<button class="btn btn-primary btn-xs " *ngIf="lightboxData.edit" (click)="lightboxData.edit = false">Done</button>
- 			</div>
-
- 		</div>
- 	</div> -->
- 	<div class="lightbox-upload-form ">
- 		<!-- <ng-container  *ngIf="lightboxData.edit">
- 		<p class="bg-[#ddd] p-1">Kindly fill the form below to upload image to the "Project" Album</p>
- 		<input type="text" class="form-control" name="" placeholder="lightbox ID" [(ngModel)]="lightboxData.id">
- 		<input type="text" class="form-control" name="" placeholder="Title" [(ngModel)]="lightboxData.title">
- 		<input type="text" class="form-control" name="" placeholder="Description" [(ngModel)]="lightboxData.description">
- 		<input type="text" class="form-control" name="" placeholder="Tags (Seperate tags by commas ',')" inactive [(ngModel)]="lightboxData.tags[1].tag">
- 		</ng-container> -->
- 		<app-lightbox [lightboxData]="lightBoxList" [currentImage]="lightboxData" ></app-lightbox>
-
- 	</div>
- </section>
-
-  </mdb-tab>
-
-
-<mdb-tab title="Interior ({{ lightBoxList2?.length }})">
-
-
- <section>
-
- 	<div class="lightbox-upload-form ">
- 		<app-lightbox [lightboxData]="lightBoxList2" [currentImage]="lightboxData2" ></app-lightbox>
-
- 	</div>
- </section>
-
-  </mdb-tab>
-
-
-
-
-
-
-<mdb-tab title="Exterior ({{ lightBoxList3?.length }})">
- <section>
-
- 	<div class="lightbox-upload-form ">
- 		<app-lightbox [lightboxData]="lightBoxList3" [currentImage]="lightboxData3"></app-lightbox>
-
- 	</div>
- </section>
-
-  </mdb-tab>
-  <mdb-tab title="Hover ({{ lightBoxList4?.length }})">
-    <section>
-         <div class="lightbox-upload-form ">
-            <app-lightbox [lightboxData]="lightBoxList4" [currentImage]="lightboxData3"></app-lightbox>
-
-        </div> 
-    </section>
-     </mdb-tab>
-
-</mdb-tabs>
-
-<ng-container *ngIf="showUploadMedia">
-    <div class="fixed right-0 bottom-0 left-0 top-0 backdrop-blur-sm bg-black/50 z-50">
-        <div class="flex flex-wrap content-center h-full w-full">
-            <div class="flex justify-center w-full px-4">
-                <div class="w-6/12 rounded-lg bg-white border shadow-xl">
-                    <div class="p-4">
-                        <app-upload-media (onCloseModal)="uploadModal()" ></app-upload-media>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</ng-container>
+<button class="btn btn-primary">Capture</button>
+</div>

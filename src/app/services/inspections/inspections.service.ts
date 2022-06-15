@@ -14,5 +14,18 @@ export class InspectionsService {
   GetInspectionForView(filter){
          return this.API.doGet('services/app/Inspections/GetInspectionForView', filter)
   }
+  GetFormForView(filter){
+         return this.API.doGet('services/app/Forms/GetFormForView', filter)
+  }
+  FormDatasCreate(){
+
+  }
+  GetFormDatas(filter){
+         return this.API.doGet('services/app/FormDatas/GetAll', filter)
+  }
+  GetFormDatasForView(filter){
+         return this.API.doGet('services/app/FormDatas/GetFormDataForView', filter)
+  }
+  
 
 }

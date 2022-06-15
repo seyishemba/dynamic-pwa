@@ -84,10 +84,10 @@
 <section class="mt-10 container col-11">
     <mdb-tabs [fill]="true">
         <mdb-tab title="Inspection">
-            <app-inspection></app-inspection>
+            <app-inspection [formId]="job.inspection.formId"></app-inspection>
         </mdb-tab>
         <mdb-tab title="Notes">
-            <app-notes></app-notes>
+            <app-notes  [inspectionId]="job.inspection.id"></app-notes>
         </mdb-tab>
         <mdb-tab title="Photos">
             <app-photos></app-photos>
