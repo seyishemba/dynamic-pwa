@@ -26,6 +26,9 @@ export class InspectionsService {
   GetFormDatasForView(filter){
          return this.API.doGet('services/app/FormDatas/GetFormDataForView', filter)
   }
-  
+
+  UploadblobFile(file){
+       return this.API.doPost('FileObjects/UploadblobFile', file)
+  }
 
 }

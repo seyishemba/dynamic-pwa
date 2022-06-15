@@ -14,6 +14,7 @@ export class NotesComponent implements OnInit {
   ngOnInit(): void {
         this.getNotes()
   }
+
   getNotes() {
     console.log(this.inspectionId)
     this.Inspections.GetFormDatas(["Filter", '"'+this.inspectionId+'"']).subscribe(data => {
@@ -23,14 +24,19 @@ export class NotesComponent implements OnInit {
       }, err => {
     });
   }
+
+
+
   formatNoteData(data){
     this.notes = []
     data.forEach((value: any, index: any) => {
       console.log(value);
+
       var input = {
         "data" : JSON.parse(value.formData.data),
         "id":  value.formData.id
       }
+      
       this.notes.push(input)
     });
     console.log(this.notes)

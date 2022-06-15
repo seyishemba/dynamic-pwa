@@ -39,11 +39,27 @@ export class Api {
     let payload = data ;
     return this.http.post<T>(_url, payload);
   }
-    doPost(url, data):Observable<any> {
+  
+  doPost(url, data):Observable<any> {
     return this.post(url, data)
       .pipe(map((result: any) => {
         return result;
       }))
+  }
+
+  doBinaryPost(url, data):Observable<any> {
+    return this.BinaryPost(url, data)
+      .pipe(map((result: any) => {
+        return result;
+      }))
+  }
+  BinaryPost<T>(url: string, data?: T): Observable<T> {
+    let repUrl = this.getUrl(url) 
+
+    let _url = repUrl.split('/api').join('');
+    //let payload = data ? JSON.stringify(data) : undefined;
+    let payload = data ;
+    return this.http.post<T>(_url, payload);
   }
 
   put<T>(url: string, data: T): Observable<T> {

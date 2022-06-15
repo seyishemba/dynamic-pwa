@@ -3,10 +3,21 @@
     Photos are synced automatically
 </div>
 
-<div class="form-control shadow-md mb-5 rounded bg-black text-white h-[250px]">
-    Webcam
+<div class="form-control shadow-md mb-5 rounded bg-[#cddbe2] text-white p-5">
+    <div class="snapshot" *ngIf="webcamImage">
+      <h5 class="">Captured Images:</h5>
+      <img [src]="webcamImage.imageAsDataUrl" style="width: 100px" />
+    </div>
 </div>
-<webcam></webcam>
 
-<button class="btn btn-primary">Capture</button>
+ <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
+            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+            [videoOptions]="videoOptions"
+            [imageQuality]="1"
+            (cameraSwitched)="cameraWasSwitched($event)"
+            (initError)="handleInitError($event)"
+    ></webcam>
+
+<button class="btn btn-primary" (click)="triggerSnapshot();">Capture</button>
+<button class="btn btn-primary" (click)="toggleWebcam();">Toogle Camera</button>
 </div>
