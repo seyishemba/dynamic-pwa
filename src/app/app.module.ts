@@ -119,6 +119,7 @@ import { MenuComponent } from './components/common/menu/menu.component';
 import { RefuelComponent } from './components/refuel/refuel.component';
 import { UploadMediaComponent } from './upload-media/upload-media.component';
 import { AlertComponent } from './components/common/alert/alert.component';
+import {WebcamModule} from 'ngx-webcam';
 @NgModule({
     declarations: [
         AppComponent,
@@ -222,7 +223,8 @@ import { AlertComponent } from './components/common/alert/alert.component';
         BrowserModule,
         MdbTabsModule,
         AppFormsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        WebcamModule
     ],
     providers: [
 
