@@ -101,7 +101,7 @@ export class PhotosComponent implements OnInit {
   }
   public handleupload(){
     console.log(this.webcamImage.imageAsDataUrl)
-    this.imageModel = false
+    this.imageModel = this.webcamImage.imageAsDataUrl
     console.log(this.imageModel)
 
 }
@@ -132,6 +132,7 @@ export class PhotosComponent implements OnInit {
         console.log(data)
       }, err => {
     });
+
   }
 
   public cameraWasSwitched(deviceId: string): void {

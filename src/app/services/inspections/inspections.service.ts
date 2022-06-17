@@ -28,7 +28,10 @@ export class InspectionsService {
   }
 
   UploadblobFile(file){
-       return this.API.doPost('FileObjects/UploadblobFile', file)
+       var imageData={
+              "file" : file 
+       }
+       return this.API.doBinaryPost('/FileObjects/UploadblobFile', imageData)
   }
 
 }
