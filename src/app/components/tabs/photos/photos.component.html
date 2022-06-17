@@ -6,7 +6,7 @@
 <div class="form-control shadow-md mb-5 rounded bg-[#cddbe2] text-white p-5">
     <div class="snapshot" *ngIf="webcamImage">
       <h5 class="">Captured Images:</h5>
-      <img [src]="webcamImage.imageAsDataUrl" style="width: 100px" />
+      <img [src]="webcamImage.imageAsDataUrl" style="width: 100px" [(model)]="imageModel" />
     </div>
 </div>
 

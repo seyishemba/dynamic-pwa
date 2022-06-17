@@ -34,6 +34,7 @@ export class PhotosComponent implements OnInit {
     lightBoxList2: Array<LightboxData> = [];
     lightBoxList3: Array<LightboxData> = [];
     lightBoxList4: Array<LightboxData> = [];
+    imageModel: any
     constructor(private Inspections: InspectionsService) {
      }
     lightboxData: any = {
@@ -96,7 +97,14 @@ export class PhotosComponent implements OnInit {
 
   public triggerSnapshot(): void {
     this.trigger.next();
+    this.handleupload();
   }
+  public handleupload(){
+    console.log(this.webcamImage.imageAsDataUrl)
+    this.imageModel = false
+    console.log(this.imageModel)
+
+}
 
   public toggleWebcam(): void {
     this.showWebcam = !this.showWebcam;
