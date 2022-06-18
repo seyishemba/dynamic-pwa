@@ -52,7 +52,7 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
     };
     checkDefault(){
         if(!this.touched){
-            alert('Cannot show demo images, Please upload new image')
+            // alert('Cannot show demo images, Please upload new image')
         }
     }
     defaultGallery(){
@@ -84,11 +84,11 @@ export class LightboxComponent implements OnInit, AfterViewChecked {
                     tags: [{ "tag" : "client", "weight" : "99"}],
                     metadata: 'Default'
                 }
-                if(this.lightboxData.length == 0){
-               this.handleFileData(newImage);
-               this.handleFileData(newImage2);
-               this.handleFileData(newImage3);
-                }
+            //     if(this.lightboxData.length == 0){
+            //    this.handleFileData(newImage);
+            //    this.handleFileData(newImage2);
+            //    this.handleFileData(newImage3);
+            //     }
 
     }
 

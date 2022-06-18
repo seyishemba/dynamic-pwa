@@ -1,30 +1,40 @@
+<div>
+    <mdb-tabs [fill]="true">
+        <mdb-tab [title]="lightboxView.lightbox.tags" *ngFor="let lightboxView of lightBoxViewList; let idx = index">
+            <section>
+                <div class="lightbox-upload-form ">
+                    <app-lightbox [lightboxData]="lightboxDataList[idx]"></app-lightbox>
+
+                </div>
+            </section>
+        </mdb-tab>
+    </mdb-tabs>
+</div>
 <div class="p-8">
-<div class="p-5 bg-[#F6E9C7] mb-8 rounded">
-    Photos are synced automatically
-</div>
-
-<div class="form-control shadow-md mb-5 rounded bg-[#cddbe2] text-white p-5">
-    <div class="snapshot" *ngIf="webcamImage">
-      <h5 class="">Captured Images:</h5>
-      <img [src]="webcamImage.imageAsDataUrl" style="width: 100px" [(model)]="imageModel" />
-
-      <form action="http://api.sentinel.care:44302/FileObjects/UploadblobFile" method="post" enctype="multipart/form-data">
-
-        <input type="file" name="file" [(mode)]="imageMode" />
-        {{imageModel}}
-        <button type ="submit"> Submit</button>
-      </form>
+    <div class="p-5 bg-[#F6E9C7] mb-8 rounded">
+        Photos are synced automatically
     </div>
-</div>
 
- <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)" *ngIf="showWebcam"
-            [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
-            [videoOptions]="videoOptions"
-            [imageQuality]="1"
-            (cameraSwitched)="cameraWasSwitched($event)"
-            (initError)="handleInitError($event)"
-    ></webcam>
+    <div class="form-control shadow-md mb-5 rounded bg-[#cddbe2] text-white p-5">
+        <div class="snapshot" *ngIf="webcamImage">
+            <h5 class="">Captured Images:</h5>
+            <img [src]="webcamImage.imageAsDataUrl" style="width: 100px" [(model)]="imageModel" />
 
-<button class="btn btn-primary" (click)="triggerSnapshot();">Capture</button>
-<button class="btn btn-primary" (click)="toggleWebcam();">Toogle Camera</button>
+            <form action="http://api.sentinel.care:44302/FileObjects/UploadblobFile" method="post"
+                enctype="multipart/form-data">
+
+                <input type="file" name="file" [(mode)]="imageMode" />
+                {{imageModel}}
+                <button type="submit"> Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <webcam [height]="500" [width]="500" [trigger]="triggerObservable" (imageCapture)="handleImage($event)"
+        *ngIf="showWebcam" [allowCameraSwitch]="allowCameraSwitch" [switchCamera]="nextWebcamObservable"
+        [videoOptions]="videoOptions" [imageQuality]="1" (cameraSwitched)="cameraWasSwitched($event)"
+        (initError)="handleInitError($event)"></webcam>
+
+    <button class="btn btn-primary" (click)="triggerSnapshot();">Capture</button>
+    <button class="btn btn-primary" (click)="toggleWebcam();">Toogle Camera</button>
 </div>

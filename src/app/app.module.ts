@@ -83,6 +83,7 @@ import { ActiveDelegatedUsersComboComponent } from './shared/layout/topbar/activ
 
 import { DefaultLogoComponent } from './shared/layout/themes/default/default-logo.component';
 
+import * as ApiServiceProxies from '@shared/service-proxies/service-proxies';
 // Metronic
 import {
     PerfectScrollbarModule,
@@ -236,8 +237,8 @@ import {WebcamModule} from 'ngx-webcam';
         {
             provide: PERFECT_SCROLLBAR_CONFIG,
             useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG,
-        },
-
+        },       
+        ApiServiceProxies.LightboxesServiceProxy,   
     ]
 })
 export class AppModule {}

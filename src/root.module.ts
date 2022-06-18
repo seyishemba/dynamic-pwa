@@ -290,6 +290,7 @@ function handleLogoutRequest(authService: AppAuthService) {
             useFactory: getCurrencyCode,
             deps: [Injector],
         },
+        { provide: API_BASE_URL, useFactory: getRemoteServiceBaseUrl },
     ],
     bootstrap: [RootComponent],
 })
