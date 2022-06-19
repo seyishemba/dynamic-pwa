@@ -250,15 +250,29 @@ export class PhotosComponent implements OnInit {
       const resp = JSON.parse(response);
       if (resp.success) {
         this.blobFileToken = resp.result.fileToken
+        alert(this.blobFileToken)
+        this.createfile (this.blobFileToken)
       } else {
         console.error(resp.result.message);
         console.error(resp.error.message);
       }
     };
-
     this.uploader.setOptions(this._uploaderOptions);
   }
-
+  createfile(token){
+    this.docreatefile(token)
+  }
+  docreatefile(token){
+    //alert("calling")
+    var fileObject={
+  "blob":token,
+  "blobToken": token,
+  "metadata": "string",
+  "storageAccount": 0,
+  "id": 0
+}
+this.Inspections.createFile(fileObject)
+  }
   guid(): string {
     function s4() {
       return Math.floor((1 + Math.random()) * 0x10000)

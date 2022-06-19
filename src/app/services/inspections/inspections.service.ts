@@ -26,6 +26,13 @@ export class InspectionsService {
   GetFormDatasForView(filter){
          return this.API.doGet('services/app/FormDatas/GetFormDataForView', filter)
   }
+  createFile(data){
+ this.API.doPost("services/app/FileObjects/CreateOrEdit", data).subscribe(
+        result => console.log(result),
+        err => console.log(err)
+      );
+
+}
 
   UploadblobFile(file){
        var imageData={

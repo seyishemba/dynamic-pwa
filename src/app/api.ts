@@ -41,6 +41,7 @@ export class Api {
   }
   
   doPost(url, data):Observable<any> {
+    
     return this.post(url, data)
       .pipe(map((result: any) => {
         return result;
