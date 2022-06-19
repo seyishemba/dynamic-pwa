@@ -4,6 +4,10 @@ import { WebcamImage, WebcamInitError, WebcamUtil } from 'ngx-webcam';
 import { Subject, Observable } from 'rxjs';
 import { InspectionsService } from 'app/services/inspections/inspections.service';
 import { GetLightboxForViewDto, LightboxesServiceProxy } from '@shared/service-proxies/service-proxies';
+import { FileItem, FileUploader, FileUploaderOptions } from 'ng2-file-upload';
+import { TokenService } from '@app/token.service';
+import { IAjaxResponse } from 'abp-ng2-module';
+import { AppConsts } from '@shared/AppConsts';
 
 @Component({
   selector: 'app-photos',
@@ -35,11 +39,13 @@ export class PhotosComponent implements OnInit {
   lightBoxViewList: Array<GetLightboxForViewDto> = [];
   lightboxDataList: Array<LightboxData[]> = [];
   imageModel: any
+  blobFileToken: string;
+  blobFileUploader: FileUploader;
 
 
   constructor(private Inspections: InspectionsService,
     injector: Injector,
-    private _lightboxesServiceProxy: LightboxesServiceProxy,) {
+    private _lightboxesServiceProxy: LightboxesServiceProxy, private _token: TokenService) {
   }
   lightboxData: any = {
     'id': '01',
@@ -102,11 +108,13 @@ export class PhotosComponent implements OnInit {
           lightboxForView.lightbox.fileContents,
           lightboxForView.lightbox.name + '(' + lightboxForView.lightbox.tags + ')',
           lightboxForView.lightbox.description);
-        
+
         this.lightBoxViewList.push(lightboxForView);
         this.lightboxDataList.push(createLightboxData);
       }
     })
+
+    this.initFileUploader()
   }
 
   getLightboxForInspection(tag: "Interior" | "Exterior" | "Hover" | "Roofing" | "", inspectionId: number) {
@@ -129,7 +137,7 @@ export class PhotosComponent implements OnInit {
   createLightboxData(fileContent: string[], title: string, description: string) {
     let lightboxArray: LightboxData[] = []
     fileContent.forEach((value) => {
-      if(value) {
+      if (value) {
         let fileUrl = value;
         lightboxArray.push({
           href: fileUrl,
@@ -183,11 +191,27 @@ export class PhotosComponent implements OnInit {
   }
 
   UploadblobFile(file) {
-    this.Inspections.UploadblobFile(file).subscribe(data => {
-      console.log(data)
-    }, err => {
-    });
+    // this.Inspections.UploadblobFile(file).subscribe(data => {
+    //   console.log(data)
+    // }, err => {
+    // });
 
+    let mimeType = PhotosComponent.detectMimeType(file); //get mime type from b64 string
+    if (mimeType) {
+      let filename = mimeType.replace(/\//, '.')
+
+      let startUploadProcess = (file) => {
+        let files: File[] = [file];
+        this.uploader.clearQueue();
+        this.uploader.addToQueue(files);
+        this.uploader.uploadAll();
+      }
+
+      this.urltoFile(file, filename, mimeType).then(function (file) {
+        startUploadProcess(file)
+      });
+
+    }
   }
 
   public cameraWasSwitched(deviceId: string): void {
@@ -203,4 +227,74 @@ export class PhotosComponent implements OnInit {
     return this.nextWebcam.asObservable();
   }
 
+  public saving = false;
+  public uploader: FileUploader;
+  private _uploaderOptions: FileUploaderOptions = {};
+
+  initFileUploader(): void {
+    this.uploader = new FileUploader({ url: AppConsts.remoteServiceBaseUrl + '/FileObjects/UploadblobFile' });
+    this._uploaderOptions.autoUpload = false;
+    this._uploaderOptions.authToken = 'Bearer ' + this._token.getToken();
+    this._uploaderOptions.removeAfterUpload = true;
+    this.uploader.onAfterAddingFile = (file) => {
+      file.withCredentials = false;
+    };
+
+    this.uploader.onBuildItemForm = (fileItem: FileItem, form: any) => {
+      form.append('FileType', fileItem.file.type);
+      form.append('FileName', 'captured_image');
+      form.append('FileToken', this.guid());
+    };
+
+    this.uploader.onSuccessItem = (item, response, status) => {
+      const resp = JSON.parse(response);
+      if (resp.success) {
+        this.blobFileToken = resp.result.fileToken
+      } else {
+        console.error(resp.result.message);
+        console.error(resp.error.message);
+      }
+    };
+
+    this.uploader.setOptions(this._uploaderOptions);
+  }
+
+  guid(): string {
+    function s4() {
+      return Math.floor((1 + Math.random()) * 0x10000)
+        .toString(16)
+        .substring(1);
+    }
+    return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
+  }
+
+  urltoFile(url: RequestInfo, filename: string, mimeType: any) : Promise<File> {
+    return (fetch(url)
+      .then(function (res) { return res.arrayBuffer(); })
+      .then(function (buf) { return new File([buf], filename, { type: mimeType }); })
+    );
+  }
+
+
+  static B64_SIGNATURES = {
+    "JVBERi0": "application/pdf",
+    "R0lGODdh": "image/gif",
+    "R0lGODlh": "image/gif",
+    "iVBORw0KGgo": "image/png",
+    "/9j/": "image/jpg"
+  };
+
+  static detectMimeType(b64: string) {
+    if (b64) {
+      let startIdx = b64.indexOf("base64,");
+      startIdx = startIdx > -1 ? startIdx + 7 : 0;
+      b64 = b64.substring(startIdx);
+      for (var s in PhotosComponent.B64_SIGNATURES) {
+        if (b64.indexOf(s) === 0) {
+          return PhotosComponent.B64_SIGNATURES[s];
+        }
+      }
+    }
+    return null
+  }
 }
