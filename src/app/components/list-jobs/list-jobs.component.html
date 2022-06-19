@@ -19,38 +19,40 @@
 </section>
 
 <section>
-    <div class="p-5 mb-5 position-relative" *ngFor="let item of jobs?.items" routerLink="/component-dashboard/view-job/{{ item.inspection.id }}">
+    <div class="p-5 mb-5 position-relative" *ngFor="let item of jobs?.items"
+        routerLink="/component-dashboard/view-job/{{ item.inspection.id }}">
         <button
-        class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full top-0 right-2 z-10 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]">
-        0 </button>
+            class="absolute d-inline-flex align-items-center justify-between p-2 rounded-full top-0 right-2 z-10 px-4 py-2 bg-[#004362] text-2xl font-bold text-[#CDDBE2]">
+            0 </button>
         <div class="rounded-[20px] shadow-md bg-[#fff] border-[2px] border-[#C8C8C8]/[.5]">
-           <div class="container">
-            <div class="row p-6 pb-0">
-                <div class="col-2 border-r-[2px] border-[#DEDEDE]">
-                    <div
-                        class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100%] h-[80%] border-[#004263] border-4">
-                    </div>
-                </div>
-                <div class="col-7">
-                    <div class="pl-[20px]">
-                        <h1 class="font-extrabold   ">{{ item.inspection.title }}</h1>
-                        <div class="italic mt-3 mb-3">
-                            <h5 class="font-medium">
-                                {{ item.inspection.address}} <br> {{ item.inspection.address2 }}</h5>
-                            <h5 class="font-medium">  {{ item.inspection.city }} {{ item.inspection.zip }} {{ item.inspection.state }} </h5>
-                            <h5 class="font-medium"> {{ item.inspection.phone }} </h5>
-                            <h5 class="font-medium">  {{ item.inspection.email }} 
-                            </h5>
+            <div class="container">
+                <div class="row p-6 pb-0">
+                    <div class="col-2 border-r-[2px] border-[#DEDEDE]">
+                        <div
+                            class="bg-[url('{{ env.assets }}/login/login-bg.jpg')] rounded-full bg-top bg-cover w-[100%] h-[80%] border-[#004263] border-4">
                         </div>
                     </div>
-                </div>
-                <div class="col-3 text-right">
-                    <p class="text-[#004263] font-medium text-2xl ">Reports <i
-                            class="fas fa-file text-[#00446178] text-[20px] ml-[20px]"></i> </p>
-                    <p><i class="fas fa-chevron-right text-[#8ea6b4] text-7xl mt-6"></i></p>
+                    <div class="col-7">
+                        <div class="pl-[20px]">
+                            <h1 class="font-extrabold   ">{{ item.inspection.title }}</h1>
+                            <div class="italic mt-3 mb-3">
+                                <h5 class="font-medium">
+                                    {{ item.inspection.address}} <br> {{ item.inspection.address2 }}</h5>
+                                <h5 class="font-medium"> {{ item.inspection.city }} {{ item.inspection.zip }}
+                                    {{ item.inspection.state }} </h5>
+                                <h5 class="font-medium"> {{ item.inspection.phone }} </h5>
+                                <h5 class="font-medium"> {{ item.inspection.email }}
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-3 text-right">
+                        <p class="text-[#004263] font-medium text-2xl ">Reports <i
+                                class="fas fa-file text-[#00446178] text-[20px] ml-[20px]"></i> </p>
+                        <p><i class="fas fa-chevron-right text-[#8ea6b4] text-7xl mt-6"></i></p>
+                    </div>
                 </div>
             </div>
-           </div>
             <div class="p-4 bg-[#EEDDB2] rounded-br-[20px] rounded-bl-[20px]">
                 <span>
                     <i class="fas fa-comment-alt"></i> Note: ...

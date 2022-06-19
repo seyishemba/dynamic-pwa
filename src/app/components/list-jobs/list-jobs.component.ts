@@ -11,8 +11,8 @@ import { Injectable } from '@angular/core';
   styleUrls: ['./list-jobs.component.css']
 })
 export class ListJobsComponent implements OnInit {
-  env:any = environment;
-  jobs:any;
+  env: any = environment;
+  jobs: any;
 
   constructor(private router: Router,
     private appService: AppService, private Inspections: InspectionsService) { }
@@ -21,12 +21,12 @@ export class ListJobsComponent implements OnInit {
     this.listJobs()
   }
 
-  listJobs(){
-      this.Inspections.GetAll(["", '']).subscribe(data => {
-            this.jobs = data;
-          }, err => {
-            console.log(err, 'err')
-          });
+  listJobs() {
+    this.Inspections.GetAll(["", '']).subscribe(data => {
+      this.jobs = data;
+    }, err => {
+      console.log(err, 'err')
+    });
   }
 
 }

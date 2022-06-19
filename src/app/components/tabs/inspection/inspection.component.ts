@@ -6,9 +6,9 @@ import { InspectionsService } from 'app/services/inspections/inspections.service
 
 
 @Component({
-  selector: 'app-inspection',
-  templateUrl: './inspection.component.html',
-  styleUrls: ['./inspection.component.css']
+    selector: 'app-inspection',
+    templateUrl: './inspection.component.html',
+    styleUrls: ['./inspection.component.css']
 })
 
 export class InspectionComponent implements OnInit {
@@ -34,13 +34,13 @@ export class InspectionComponent implements OnInit {
         value: {
             "id": "01",
             "href": "",
-            "thumbnailHref" : "",
-            "sequence" : "0",
-            "title" : "Happy Image",
-            "description" : "This is a happy image",
-            "tags" : [{ "tag" : "client", "weight" : "99"}, { "tag" : "profile", "weight" : "99"}],
-            "metadata" : { "some_attribute" : "some value" }
-          },
+            "thumbnailHref": "",
+            "sequence": "0",
+            "title": "Happy Image",
+            "description": "This is a happy image",
+            "tags": [{ "tag": "client", "weight": "99" }, { "tag": "profile", "weight": "99" }],
+            "metadata": { "some_attribute": "some value" }
+        },
         required: true,
         label: 'Select Images',
         placeholder: 'Select Images',
@@ -64,8 +64,8 @@ export class InspectionComponent implements OnInit {
                 definitions: JSON.parse(data.form.formJson)
             };
             this.fields = fields
-            
-          }, err => {
+
+        }, err => {
         });
     }
 

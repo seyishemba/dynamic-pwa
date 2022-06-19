@@ -251,7 +251,7 @@ export class PhotosComponent implements OnInit {
       if (resp.success) {
         this.blobFileToken = resp.result.fileToken
         alert(this.blobFileToken)
-        this.createfile (this.blobFileToken)
+        this.createfile(this.blobFileToken)
       } else {
         console.error(resp.result.message);
         console.error(resp.error.message);
@@ -259,19 +259,19 @@ export class PhotosComponent implements OnInit {
     };
     this.uploader.setOptions(this._uploaderOptions);
   }
-  createfile(token){
+  createfile(token) {
     this.docreatefile(token)
   }
-  docreatefile(token){
+  docreatefile(token) {
     //alert("calling")
-    var fileObject={
-  "blob":token,
-  "blobToken": token,
-  "metadata": "string",
-  "storageAccount": 0,
-  "id": 0
-}
-this.Inspections.createFile(fileObject)
+    var fileObject = {
+      "blob": token,
+      "blobToken": token,
+      "metadata": "string",
+      "storageAccount": 0,
+      "id": 0
+    }
+    this.Inspections.createFile(fileObject)
   }
   guid(): string {
     function s4() {
@@ -282,7 +282,7 @@ this.Inspections.createFile(fileObject)
     return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
   }
 
-  urltoFile(url: RequestInfo, filename: string, mimeType: any) : Promise<File> {
+  urltoFile(url: RequestInfo, filename: string, mimeType: any): Promise<File> {
     return (fetch(url)
       .then(function (res) { return res.arrayBuffer(); })
       .then(function (buf) { return new File([buf], filename, { type: mimeType }); })
