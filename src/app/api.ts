@@ -60,7 +60,7 @@ export class Api {
     let _url = repUrl.split('/api').join('');
     //let payload = data ? JSON.stringify(data) : undefined;
     let payload = data ;
-    return this.http.post<T>("http://api.sentinel.care:44302"+ url , payload);
+    return this.http.post<T>("https://staging-api.sentinel.care"+ url , payload);
   }
 
   put<T>(url: string, data: T): Observable<T> {

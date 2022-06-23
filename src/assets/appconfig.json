@@ -1,5 +1,5 @@
 ﻿{
-  "remoteServiceBaseUrl": "http://api.sentinel.care:44302",
+  "remoteServiceBaseUrl": "https://staging-api.sentinel.care",
   "appBaseUrl": "http://localhost:4200",
   "localeMappings": {
     "angular": [

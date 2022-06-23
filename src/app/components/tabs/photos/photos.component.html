@@ -20,7 +20,7 @@
             <h5 class="">Captured Images:</h5>
             <img [src]="webcamImage.imageAsDataUrl" style="width: 100px" [(model)]="imageModel" />
 
-            <form action="http://api.sentinel.care:44302/FileObjects/UploadblobFile" method="post"
+            <form action="https://staging-api.sentinel.care/FileObjects/UploadblobFile" method="post"
                 enctype="multipart/form-data">
 
                 <input type="file" name="file" [(mode)]="imageMode" />
